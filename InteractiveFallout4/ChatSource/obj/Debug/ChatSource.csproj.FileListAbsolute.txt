@@ -1,0 +1,492 @@
+c:\Users\Zevas\documents\visual studio 2015\Projects\Chat\ChatSource\bin\Debug\ChatSource.exe.config
+c:\Users\Zevas\documents\visual studio 2015\Projects\Chat\ChatSource\bin\Debug\ChatSource.exe
+c:\Users\Zevas\documents\visual studio 2015\Projects\Chat\ChatSource\bin\Debug\ChatSource.pdb
+c:\Users\Zevas\documents\visual studio 2015\Projects\Chat\ChatSource\obj\Debug\ChatSource.exe
+c:\Users\Zevas\documents\visual studio 2015\Projects\Chat\ChatSource\obj\Debug\ChatSource.pdb
+c:\Users\Zevas\documents\visual studio 2015\Projects\Chat\ChatSource\bin\Debug\websocket-sharp.dll
+c:\Users\Zevas\documents\visual studio 2015\Projects\Chat\ChatSource\obj\Debug\ChatSource.csprojResolveAssemblyReference.cache
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\Serilog.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\Serilog.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\Serilog.Extensions.Logging.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\TwitchLib.Client.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\TwitchLib.Client.Enums.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\TwitchLib.Client.Models.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\WebSocket4Net.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\Serilog.Extensions.Logging.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\ChatSource.exe.config
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\Serilog.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\Serilog.Extensions.Logging.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\TwitchLib.Client.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\TwitchLib.Client.Enums.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\TwitchLib.Client.Models.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\websocket-sharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\WebSocket4Net.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\Serilog.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\bin\Debug\Serilog.Extensions.Logging.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\obj\Debug\ChatSource.csprojResolveAssemblyReference.cache
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\obj\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\Chat(End for Dont Starve)\Chat\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\ChatSource.exe.config
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\Serilog.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\Serilog.Extensions.Logging.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\TwitchLib.Client.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\TwitchLib.Client.Enums.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\TwitchLib.Client.Models.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\websocket-sharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\Serilog.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\Serilog.Extensions.Logging.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\obj\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\obj\Debug\ChatSource.csprojResolveAssemblyReference.cache
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\WebSocket4Net.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim\ChatSource\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\ChatSource.exe.config
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\Serilog.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\Serilog.Extensions.Logging.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\TwitchLib.Client.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\TwitchLib.Client.Enums.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\TwitchLib.Client.Models.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\websocket-sharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\WebSocket4Net.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\Serilog.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\Serilog.Extensions.Logging.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\obj\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForSkirim(EatAlot)\ChatSource\obj\Debug\ChatSource.csprojResolveAssemblyReference.cache
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\ChatSource.exe.config
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.Extensions.Logging.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Client.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Client.Enums.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Client.Models.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\websocket-sharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\WebSocket4Net.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.Extensions.Logging.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\obj\Debug\ChatSource.csprojResolveAssemblyReference.cache
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\obj\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Api.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\ChatSource.exe.config
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.Extensions.Logging.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Api.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Client.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Client.Enums.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Client.Models.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\websocket-sharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\WebSocket4Net.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.Extensions.Logging.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\obj\Debug\ChatSource.csprojResolveAssemblyReference.cache
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\obj\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)\ChatInteractivForFallout4(All)\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\ChatSource.exe.config
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.Extensions.Logging.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Api.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Client.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Client.Enums.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Client.Models.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\websocket-sharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\WebSocket4Net.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.Extensions.Logging.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\obj\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\obj\Debug\ChatSource.csprojResolveAssemblyReference.cache
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\ChatSource.exe.config
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.Extensions.Logging.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Api.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Client.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Client.Enums.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\TwitchLib.Client.Models.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\websocket-sharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\WebSocket4Net.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\bin\Debug\Serilog.Extensions.Logging.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\obj\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(15)\ChatInteractivForFallout4(All)(x64)\ChatInteractivForFallout4(All)\ChatSource\obj\Debug\ChatSource.csprojResolveAssemblyReference.cache
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\ChatSource.exe.config
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\Serilog.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\Serilog.Extensions.Logging.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\TwitchLib.Api.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\TwitchLib.Client.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\TwitchLib.Client.Enums.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\TwitchLib.Client.Models.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\websocket-sharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\WebSocket4Net.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\Serilog.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\Serilog.Extensions.Logging.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\obj\Debug\ChatSource.csprojResolveAssemblyReference.cache
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\obj\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(16)\ChatInteractivForFallout4(All)(x64)\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\ChatSource.exe.config
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\Serilog.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\Serilog.Extensions.Logging.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\TwitchLib.Api.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\TwitchLib.Client.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\TwitchLib.Client.Enums.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\TwitchLib.Client.Models.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\websocket-sharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\WebSocket4Net.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\Serilog.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\Serilog.Extensions.Logging.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\obj\Debug\ChatSource.csprojResolveAssemblyReference.cache
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\obj\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(17)\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\ChatSource.exe.config
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\Serilog.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\Serilog.Extensions.Logging.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\TwitchLib.Api.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\TwitchLib.Client.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\TwitchLib.Client.Enums.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\TwitchLib.Client.Models.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\websocket-sharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\WebSocket4Net.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\Serilog.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\Serilog.Extensions.Logging.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\obj\Debug\ChatSource.csprojResolveAssemblyReference.cache
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\obj\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(20)\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\Serilog.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\Serilog.Extensions.Logging.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\TwitchLib.Api.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\TwitchLib.Client.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\TwitchLib.Client.Enums.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\TwitchLib.Client.Models.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\websocket-sharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\WebSocket4Net.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\Serilog.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\Serilog.Extensions.Logging.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\obj\Debug\ChatSource.csprojResolveAssemblyReference.cache
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\ChatSource.exe.config
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\bin\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(21)\ChatSource\obj\Debug\ChatSource.exe
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\ChatSource.dll.config
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\ChatSource.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\Serilog.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\Serilog.Extensions.Logging.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\TwitchLib.Api.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\TwitchLib.Client.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\TwitchLib.Client.Enums.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\TwitchLib.Client.Models.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\websocket-sharp.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\WebSocket4Net.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\Serilog.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\Serilog.Extensions.Logging.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\obj\Debug\ChatSource.dll
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\Documents\Visual Studio 2015\Projects\ChatInteractivForFallout4(All)(x64)(23)\ChatSource\obj\Debug\ChatSource.csprojResolveAssemblyReference.cache
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\ChatSource.dll.config
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\ChatSource.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\obj\Debug\ChatSource.csproj.CoreCompileInputs.cache
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\obj\Debug\ChatSource.csproj.CopyComplete
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\obj\Debug\ChatSource.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\ChatSource\obj\Debug\ChatSource.csprojAssemblyReference.cache
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\ChatSource.dll.config
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\ChatSource.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\obj\Debug\ChatSource.csproj.CoreCompileInputs.cache
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\obj\Debug\ChatSource.csproj.CopyComplete
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\obj\Debug\ChatSource.dll
+C:\Users\Zevas\source\repos\WpfMVVM\WpfMVVM\WpfMVVM\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\bin\Debug\ChatSource.dll.config
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\bin\Debug\ChatSource.dll
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\bin\Debug\ChatSource.pdb
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\bin\Debug\System.Data.dll
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\bin\Debug\System.dll
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\bin\Debug\System.Drawing.dll
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\bin\Debug\System.Net.Http.dll
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\bin\Debug\System.Web.Extensions.dll
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\bin\Debug\System.Xml.dll
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\obj\Debug\ChatSource.csproj.CoreCompileInputs.cache
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\obj\Debug\ChatSource.csproj.CopyComplete
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\obj\Debug\ChatSource.dll
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\obj\Debug\ChatSource.pdb
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\obj\Debug\ChatSource.csprojAssemblyReference.cache

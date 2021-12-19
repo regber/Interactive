@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<DonateStatistics xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CurrentDonateAmount>1914</CurrentDonateAmount>
+  <DonateList>
+    <Donate Date="2021-12-28T00:00:00" CommandName="Gby2" DonateAmount="55" DonaterName="me1" Platform="GoodGame" />
+    <Donate Date="2021-12-28T00:00:00" CommandName="Gby3" DonateAmount="55" DonaterName="me2" Platform="GoodGame" />
+    <Donate Date="2021-12-28T00:00:00" CommandName="Gby4" DonateAmount="55" DonaterName="me3" Platform="Twitch" />
+    <Donate Date="2021-12-30T00:00:00" CommandName="Gby1" DonateAmount="55" DonaterName="me" Platform="GoodGame" />
+    <Donate Date="2021-12-30T00:00:00" CommandName="Gby1" DonateAmount="55" DonaterName="me" Platform="GoodGame" />
+    <Donate Date="2021-12-30T00:00:00" CommandName="Gby2" DonateAmount="55" DonaterName="me1" Platform="GoodGame" />
+    <Donate Date="2021-12-30T00:00:00" CommandName="Gby3" DonateAmount="55" DonaterName="me2" Platform="GoodGame" />
+    <Donate Date="2021-12-30T00:00:00" CommandName="Gby4" DonateAmount="55" DonaterName="me3" Platform="Twitch" />
+    <Donate Date="2021-11-21T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonat" Platform="GoodGame" />
+    <Donate Date="2021-11-21T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDona" Platform="GoodGame" />
+    <Donate Date="2021-11-21T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonat" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная2" DonateAmount="500" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная2" DonateAmount="500" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная2" DonateAmount="500" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная2" DonateAmount="500" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная2" DonateAmount="500" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Тест 1" DonateAmount="150" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Тест 1" DonateAmount="150" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Тест 1" DonateAmount="150" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Тест 1" DonateAmount="150" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная2" DonateAmount="500" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная2" DonateAmount="500" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Тест 1" DonateAmount="150" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Тест 1" DonateAmount="150" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная" DonateAmount="250" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Основная2" DonateAmount="500" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Тест 1" DonateAmount="150" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Тест 1" DonateAmount="150" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-27T00:00:00" CommandName="Тест 1" DonateAmount="150" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Тест 1" DonateAmount="150" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Тест 1" DonateAmount="150" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Тест 1" DonateAmount="150" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Дождь" DonateAmount="115" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Вызов Краба" DonateAmount="118" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Шкатулки" DonateAmount="111" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Пинок" DonateAmount="109" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Песчаная буря" DonateAmount="113" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Ловушка с гранатами" DonateAmount="102" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Смена оружия" DonateAmount="101" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Корона" DonateAmount="103" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Ядерный апокалипсис" DonateAmount="116" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Вызов антроп. мобов по рулетке v2" DonateAmount="104" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Радиоактивный шторм" DonateAmount="114" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Дырка в кармане" DonateAmount="108" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Пинок" DonateAmount="109" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Пинок" DonateAmount="109" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Пинок" DonateAmount="109" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Пинок" DonateAmount="109" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-11-28T00:00:00" CommandName="Заморозка" DonateAmount="110" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-12-05T00:00:00" CommandName="Шкатулки" DonateAmount="111" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-12-05T00:00:00" CommandName="Песчаная буря" DonateAmount="113" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-12-05T00:00:00" CommandName="Радиоактивный шторм" DonateAmount="114" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-12-05T00:00:00" CommandName="Пинок" DonateAmount="109" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-12-05T00:00:00" CommandName="Пинок" DonateAmount="109" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-12-05T00:00:00" CommandName="Ловушка с гранатами" DonateAmount="102" DonaterName="TestDonation" Platform="GoodGame" />
+    <Donate Date="2021-12-05T00:00:00" CommandName="Ловушка с гранатами" DonateAmount="102" DonaterName="TestDonation" Platform="GoodGame" />
+  </DonateList>
+</DonateStatistics>

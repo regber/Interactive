@@ -1,0 +1,395 @@
+﻿<Window x:Class="InteractiveFallout4.InteractiveRoulette.InteractiveRouletteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:InteractiveFallout4.InteractiveRoulette"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:Converters="clr-namespace:InteractiveFallout4.Common.Converters"
+        mc:Ignorable="d"
+        Title="Слот-машина" Height="250" Width="800" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Topmost="True">
+    <Window.Resources>
+        <local:InteractiveRouletteWindowViewModel x:Key="InteractiveRouletteWindowViewModel"></local:InteractiveRouletteWindowViewModel>
+        <local:WidthRouletteConverter x:Key="WidthRouletteConverter"></local:WidthRouletteConverter>
+        <local:CrutchCapRouletteConverter x:Key="CrutchCapRouletteConverter"></local:CrutchCapRouletteConverter>
+        <local:StartBarrelPositonConverter x:Key="StartBarrelPositonConverter"></local:StartBarrelPositonConverter>
+        <Converters:CommandMultParamConverter x:Key="CommandMultParamConverter"></Converters:CommandMultParamConverter>
+        <Converters:AlterationNumberConverter x:Key="AlterationNumberConverter"></Converters:AlterationNumberConverter>
+        <Converters:ColorConverter x:Key="ColorConverter"></Converters:ColorConverter>
+
+        <!--Анимаци  вынесена в ресурсы т.к. из самого контрола не возможно инициализироавть событие?-->
+        <Storyboard x:Key="RiseAnimation">
+            <DoubleAnimation  Duration="0:0:00.5" To="1" Completed="RiseAnimation_Completed" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
+        </Storyboard>
+        <Storyboard x:Key="DownAnimation">
+            <DoubleAnimation BeginTime="0:0:04" Duration="0:0:00.5" To="0" Completed="DownAnimation_Completed"  Storyboard.TargetProperty="Opacity"></DoubleAnimation>
+        </Storyboard>
+    </Window.Resources>
+    <Window.DataContext>
+        <Binding Source="{StaticResource InteractiveRouletteWindowViewModel}"></Binding>
+    </Window.DataContext>
+    <Grid Background="{Binding BackgroundColor,Converter={StaticResource ColorConverter}}"  ShowGridLines="False" SnapsToDevicePixels="True">
+        <Grid ShowGridLines="False" SnapsToDevicePixels="True">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="{Binding Path=ActualHeight, UpdateSourceTrigger=PropertyChanged, Mode=OneWay, ElementName=BackgroundViewbox}"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--Плеер для воспроизведения звука вращения и останова барабанов-->
+            <MediaElement Name="RotationPlayer"  Visibility="Collapsed" Volume="1" Source="InteractiveRoulette/RouletteSoundResources/rotation.mp3" LoadedBehavior="Manual"/>
+            <MediaElement Name="StopRotationPlayer"  Visibility="Collapsed" Volume="1" Source="InteractiveRoulette/RouletteSoundResources/stopRotationRotation.mp3" UnloadedBehavior="Manual"  LoadedBehavior="Manual"/>
+
+            <!--Top Cap-->
+            <Canvas  Background="{Binding  BackgroundColor,Converter={StaticResource ColorConverter}}"  Grid.Row="0" Panel.ZIndex="1"></Canvas>
+
+            <!--Roulette-->
+            <Viewbox Grid.Row="1" Opacity="0" Panel.ZIndex="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="{Binding Path=ActualHeight, UpdateSourceTrigger=PropertyChanged, Mode=OneWay, ElementName=BackgroundViewbox}" Width="{Binding Path=ActualWidth, UpdateSourceTrigger=PropertyChanged, Mode=OneWay, ElementName=BackgroundViewbox}">
+
+                <Viewbox.Style>
+                    <Style TargetType="Viewbox">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding RouletteShowUp}" Value="true">
+                                <DataTrigger.EnterActions>
+                                    <BeginStoryboard Storyboard="{StaticResource RiseAnimation}"></BeginStoryboard>
+                                </DataTrigger.EnterActions>
+                                <DataTrigger.ExitActions>
+                                    <BeginStoryboard Storyboard="{StaticResource DownAnimation}"></BeginStoryboard>
+                                </DataTrigger.ExitActions>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Viewbox.Style>
+                <!--Viewbox.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard TargetProperty="Opacity">
+                                    <DoubleAnimation From="0" To="1"
+                                         AutoReverse="True"
+                                         RepeatBehavior="0:0:10"
+                                         Duration="0:0:3"
+                                         Completed="DoubleAnimation_Completed" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </Viewbox.Triggers-->
+                <!--Viewbox.Style>
+                <Style TargetType="Viewbox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{x:Static local:InteractiveRouletteWindowViewModel.resizingNow}" Value="true">
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard
+                            x:Name="beginAnimation"
+                            Storyboard="{StaticResource StopSearchAnimation}" />
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
+                                <StopStoryboard
+                            BeginStoryboardName="beginAnimation" />
+                            </DataTrigger.ExitActions>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Viewbox.Style-->
+                <!--i:Interaction.Triggers>
+                <i:DataTrigger Binding="{Binding resizingNow}" Value="false">
+                    <i:ControlStoryboardAction>
+                        <Storyboard.Target>
+                            <DoubleAnimation Duration="0:0:10" To="0" Storyboard.TargetProperty="Opacity" />
+                        </Storyboard.Target>
+                    </i:ControlStoryboardAction>
+                </i:DataTrigger>
+            </i:Interaction.Triggers-->
+                <!--Viewbox.Style>
+                <Style TargetType="Viewbox">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.400" To="1" Storyboard.TargetProperty="Opacity" />
+                                        <DoubleAnimation Duration="0:0:0.300" To="125" Storyboard.TargetProperty="Height" />
+                                        <DoubleAnimation Duration="0:0:0.300" To="125" Storyboard.TargetProperty="Width" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.400" To="0" Storyboard.TargetProperty="Opacity" />
+                                        <DoubleAnimation Duration="0:0:0.150" To="100" Storyboard.TargetProperty="Height" />
+                                        <DoubleAnimation Duration="0:0:0.150" To="100" Storyboard.TargetProperty="Width" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Viewbox.Style-->
+                <!--Viewbox.Triggers >
+                <EventTrigger Storyboard.TargetProperty="{Binding ResizeCanvasCommand}" RoutedEvent="Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard TargetProperty="Opacity">
+                                <DoubleAnimation From="0" To="1" Duration="0:0:00.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Viewbox.Triggers-->
+                <StackPanel  Orientation="Horizontal">
+                    <!--Left-->
+                    <StackPanel   Orientation="Vertical">
+                        <Image>
+                            <Image.Source>
+                                <BitmapImage UriSource="RouletteImageResources/LeftTopCorner.png"></BitmapImage>
+                            </Image.Source>
+                        </Image>
+                        <Image>
+                            <Image.Source>
+                                <BitmapImage UriSource="RouletteImageResources/LeftPanel.png"></BitmapImage>
+                            </Image.Source>
+                        </Image>
+                        <Image>
+                            <Image.Source>
+                                <BitmapImage UriSource="RouletteImageResources/LeftBottomCorner.png"></BitmapImage>
+                            </Image.Source>
+                        </Image>
+
+
+                    </StackPanel>
+
+                    <!--Center-->
+                    <Canvas>
+                        <Canvas.Width>
+                            <MultiBinding Converter="{StaticResource WidthRouletteConverter}">
+                                <Binding Path="DataContext.Barrels.Count" UpdateSourceTrigger="PropertyChanged"  RelativeSource="{RelativeSource Mode=Self}"></Binding>
+                                <Binding Path="ActualWidth" UpdateSourceTrigger="PropertyChanged"  ElementName="BarrelImage"></Binding>
+                            </MultiBinding>
+                        </Canvas.Width>
+
+                        <!--костыль для закрытия возникающей периодически прорехи при ресайзе рулетки-->
+                        <Canvas  Width="{Binding ElementName=BarrelImage, Path=ActualWidth}" Panel.ZIndex="1">
+                            <Canvas.Margin>
+                                <MultiBinding Converter="{StaticResource  CrutchCapRouletteConverter}">
+                                    <Binding Path="DataContext.Barrels.Count" UpdateSourceTrigger="PropertyChanged"  RelativeSource="{RelativeSource Mode=Self}"></Binding>
+                                    <Binding Path="ActualWidth" UpdateSourceTrigger="PropertyChanged"  ElementName="BarrelImage"></Binding>
+                                </MultiBinding>
+                            </Canvas.Margin>
+                            <StackPanel Orientation="Vertical">
+                                <Canvas Panel.ZIndex="1" Width="{Binding ElementName=TopPanelImage, Path=ActualWidth}" Height="{Binding ElementName=TopPanelImage, Path=ActualHeight}">
+                                    <Image x:Name="TopPanelImage">
+                                        <Image.Source>
+                                            <BitmapImage  UriSource="RouletteImageResources/TopPanel.png"></BitmapImage>
+                                        </Image.Source>
+                                    </Image>
+                                </Canvas>
+                                <Canvas Panel.ZIndex="0" Width="{Binding ElementName=BarrelImage, Path=ActualWidth}" Height="{Binding ElementName=BarrelImage, Path=ActualHeight}">
+                                    <Image Visibility="Hidden" x:Name="BarrelImage">
+                                        <Image.Source>
+                                            <BitmapImage UriSource="RouletteImageResources/Barrel.png"></BitmapImage>
+                                        </Image.Source>
+                                    </Image>
+                                </Canvas>
+                                <Canvas Panel.ZIndex="1" Width="{Binding ElementName=BottomPanelImage, Path=ActualWidth}" Height="{Binding ElementName=BottomPanelImage, Path=ActualHeight}">
+                                    <Image x:Name="BottomPanelImage">
+                                        <Image.Source>
+                                            <BitmapImage UriSource="RouletteImageResources/BottomPanel.png"></BitmapImage>
+                                        </Image.Source>
+                                    </Image>
+                                </Canvas>
+                            </StackPanel>
+                        </Canvas>
+
+                        <!--итерационная отрисовка барабанов и средней части рулетки-->
+                        <StackPanel Orientation="Horizontal">
+
+                            <ItemsControl ItemsControl.AlternationCount="{x:Static system:Int32.MaxValue}" ItemsSource="{Binding Barrels}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"></StackPanel>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate >
+                                    <HierarchicalDataTemplate>
+                                        <StackPanel  Orientation="Vertical">
+
+                                            <!--Окантовка вокруг барабанов(центральная часть)-->
+                                            <Canvas Panel.ZIndex="1" Width="{Binding ElementName=TopPanelImage, Path=ActualWidth}" Height="{Binding ElementName=TopPanelImage, Path=ActualHeight}">
+                                                <Image x:Name="TopPanelImage">
+                                                    <Image.Source>
+                                                        <BitmapImage  UriSource="RouletteImageResources/TopPanel.png"></BitmapImage>
+                                                    </Image.Source>
+                                                </Image>
+                                            </Canvas>
+                                            <Canvas  Panel.ZIndex="0" Width="{Binding ElementName=BarrelImage, Path=ActualWidth}" Height="{Binding ElementName=BarrelImage, Path=ActualHeight}">
+                                                <Image x:Name="BarrelImage">
+                                                    <Image.Source>
+                                                        <BitmapImage UriSource="RouletteImageResources/Barrel.png"></BitmapImage>
+                                                    </Image.Source>
+                                                </Image>
+                                            </Canvas>
+                                            <Canvas Panel.ZIndex="1" Width="{Binding ElementName=BottomPanelImage, Path=ActualWidth}" Height="{Binding ElementName=BottomPanelImage, Path=ActualHeight}">
+                                                <Image x:Name="BottomPanelImage">
+                                                    <Image.Source>
+                                                        <BitmapImage UriSource="RouletteImageResources/BottomPanel.png"></BitmapImage>
+                                                    </Image.Source>
+                                                </Image>
+                                            </Canvas>
+
+                                            <!--Сами барабаны-->
+                                            <Canvas Background="Black" Panel.ZIndex="0" >
+                                                <!--расставляем стартовые позиции барабанов случайным образом-->
+                                                <Canvas.Margin>
+                                                    <MultiBinding NotifyOnTargetUpdated="True"  UpdateSourceTrigger="PropertyChanged" Mode="TwoWay" Converter="{StaticResource StartBarrelPositonConverter}">
+                                                        <Binding Path="ItemsSource.Count" UpdateSourceTrigger="PropertyChanged"  ElementName="BarrelItems"></Binding>
+                                                        <Binding Path="ActualHeight" UpdateSourceTrigger="PropertyChanged"  ElementName="TopPanelImage"></Binding>
+                                                        <Binding Path="ActualHeight" UpdateSourceTrigger="PropertyChanged"   ElementName="BarrelImage"></Binding>
+                                                        <Binding Path="ActualHeight" UpdateSourceTrigger="PropertyChanged"   ElementName="BottomPanelImage"></Binding>
+                                                        <Binding RelativeSource="{RelativeSource Mode=Self}"></Binding>
+                                                    </MultiBinding>
+                                                </Canvas.Margin>
+                                                <StackPanel Orientation="Vertical">
+                                                    <ItemsControl Name="BarrelItems" ItemsSource="{Binding}">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <ItemContainerTemplate>
+                                                                <Image Width="{Binding ElementName=BarrelImage, Path=ActualWidth}">
+                                                                    <Image.Source>
+                                                                        <BitmapImage UriSource="{Binding}"></BitmapImage>
+                                                                    </Image.Source>
+                                                                </Image>
+                                                            </ItemContainerTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </StackPanel>
+                                                <i:Interaction.Triggers>
+                                                    <i:DataTrigger Binding="{Binding Path=DataContext.BarrelOnRotation, RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}" Value="true">
+                                                        <i:InvokeCommandAction Command="{x:Static local:InteractiveRouletteWindowViewModel.StartBarrelAnimationCommand}" >
+                                                            <i:InvokeCommandAction.CommandParameter>
+                                                                <MultiBinding Converter="{StaticResource  CommandMultParamConverter}">
+                                                                    <Binding RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType={x:Type Canvas}}"></Binding>
+                                                                    <Binding Path="(ItemsControl.AlternationIndex)" Converter="{StaticResource AlterationNumberConverter}" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPresenter}}"></Binding>
+                                                                    <Binding RelativeSource="{RelativeSource Mode=Self}"></Binding>
+                                                                </MultiBinding>
+                                                            </i:InvokeCommandAction.CommandParameter>
+                                                        </i:InvokeCommandAction>
+                                                    </i:DataTrigger>
+                                                </i:Interaction.Triggers>
+                                            </Canvas>
+                                        </StackPanel>
+                                    </HierarchicalDataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Canvas>
+
+
+                    <!--Right-->
+                    <StackPanel Orientation="Vertical">
+                        <Image>
+                            <Image.Source>
+                                <BitmapImage UriSource="RouletteImageResources/RightTopCorner.png"></BitmapImage>
+                            </Image.Source>
+                        </Image>
+                        <Image>
+                            <Image.Source>
+                                <BitmapImage UriSource="RouletteImageResources/RightPanel.png"></BitmapImage>
+                            </Image.Source>
+                        </Image>
+                        <Image>
+                            <Image.Source>
+                                <BitmapImage UriSource="RouletteImageResources/RightBottomCorner.png"></BitmapImage>
+                            </Image.Source>
+                        </Image>
+                    </StackPanel>
+                </StackPanel>
+            </Viewbox>
+
+            <!--Bottom Cap-->
+            <Canvas  Background="{Binding BackgroundColor,Converter={StaticResource ColorConverter}}"  Grid.Row="2" Panel.ZIndex="1"></Canvas>
+
+            <!--Roulette Resize Background-->
+            <Canvas Grid.Row="1" Name="BackgroundCanvas" Background="BlueViolet" Visibility="Hidden" Height="{Binding Path=ActualHeight, UpdateSourceTrigger=PropertyChanged, Mode=OneWay, ElementName=BackgroundViewbox}" Width="{Binding Path=ActualWidth, UpdateSourceTrigger=PropertyChanged, Mode=OneWay, ElementName=BackgroundViewbox}" Panel.ZIndex="1">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SizeChanged">
+                        <i:InvokeCommandAction Command="{Binding ResizeCanvasCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Canvas}}"></i:InvokeCommandAction>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <Viewbox x:Name="BackgroundViewbox"  Height="{Binding Path=ActualHeight, UpdateSourceTrigger=PropertyChanged, Mode=OneWay, RelativeSource={RelativeSource AncestorLevel=2, Mode=FindAncestor,AncestorType={x:Type Grid}}}" Width="{Binding Path=ActualWidth, UpdateSourceTrigger=PropertyChanged, Mode=OneWay, RelativeSource={RelativeSource AncestorLevel=2, Mode=FindAncestor,AncestorType={x:Type Grid}}}">
+                    <StackPanel Orientation="Horizontal">
+                        <!--Left-->
+                        <StackPanel Visibility="Hidden" Orientation="Vertical">
+                            <Image>
+                                <Image.Source>
+                                    <BitmapImage UriSource="RouletteImageResources/LeftTopCorner.png"></BitmapImage>
+                                </Image.Source>
+                            </Image>
+                            <Image>
+                                <Image.Source>
+                                    <BitmapImage UriSource="RouletteImageResources/LeftPanel.png"></BitmapImage>
+                                </Image.Source>
+                            </Image>
+                            <Image>
+                                <Image.Source>
+                                    <BitmapImage UriSource="RouletteImageResources/LeftBottomCorner.png"></BitmapImage>
+                                </Image.Source>
+                            </Image>
+                        </StackPanel>
+                        <!--Center-->
+                        <StackPanel Visibility="Hidden" Orientation="Horizontal">
+                            <ItemsControl ItemsSource="{Binding MaxCountBarrels}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <VirtualizingStackPanel Orientation="Horizontal"></VirtualizingStackPanel>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <HierarchicalDataTemplate>
+                                        <StackPanel Orientation="Vertical">
+                                            <Image>
+                                                <Image.Source>
+                                                    <BitmapImage UriSource="RouletteImageResources/TopPanel.png"></BitmapImage>
+                                                </Image.Source>
+                                            </Image>
+                                            <Image>
+                                                <Image.Source>
+                                                    <BitmapImage UriSource="RouletteImageResources/Barell.png"></BitmapImage>
+                                                </Image.Source>
+                                            </Image>
+                                            <Image>
+                                                <Image.Source>
+                                                    <BitmapImage UriSource="RouletteImageResources/BottomPanel.png"></BitmapImage>
+                                                </Image.Source>
+                                            </Image>
+                                        </StackPanel>
+                                    </HierarchicalDataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                        <!--Right-->
+                        <StackPanel Visibility="Hidden" Orientation="Vertical">
+                            <Image>
+                                <Image.Source>
+                                    <BitmapImage UriSource="RouletteImageResources/RightTopCorner.png"></BitmapImage>
+                                </Image.Source>
+                            </Image>
+                            <Image>
+                                <Image.Source>
+                                    <BitmapImage UriSource="RouletteImageResources/RightPanel.png"></BitmapImage>
+                                </Image.Source>
+                            </Image>
+                            <Image>
+                                <Image.Source>
+                                    <BitmapImage UriSource="RouletteImageResources/RightBottomCorner.png"></BitmapImage>
+                                </Image.Source>
+                            </Image>
+                        </StackPanel>
+                    </StackPanel>
+                </Viewbox>
+
+            </Canvas>
+        </Grid>
+    </Grid>
+</Window>

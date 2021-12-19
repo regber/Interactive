@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteractiveFallout4", "InteractiveFallout4\InteractiveFallout4.csproj", "{1F93FBA8-C296-40D6-ABBD-B283F77466B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatSource", "InteractiveFallout4\ChatSource\ChatSource.csproj", "{E8B912C3-8D78-4159-92D0-D778B11F2F9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F93FBA8-C296-40D6-ABBD-B283F77466B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F93FBA8-C296-40D6-ABBD-B283F77466B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F93FBA8-C296-40D6-ABBD-B283F77466B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F93FBA8-C296-40D6-ABBD-B283F77466B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8B912C3-8D78-4159-92D0-D778B11F2F9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8B912C3-8D78-4159-92D0-D778B11F2F9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8B912C3-8D78-4159-92D0-D778B11F2F9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8B912C3-8D78-4159-92D0-D778B11F2F9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E479F3B-C9F0-4D1C-8FFB-42257F7FF920}
+	EndGlobalSection
+EndGlobal

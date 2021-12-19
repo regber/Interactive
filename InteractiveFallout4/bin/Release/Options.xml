@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <API>
+    <GoodGame>
+      <Enable>false</Enable>
+      <Channel>Regber.88</Channel>
+      <Login>Logiтфыа</Login>
+      <Password>Passфыа</Password>
+    </GoodGame>
+    <Twitch>
+      <Enable>false</Enable>
+      <Channel>Regber.99</Channel>
+      <Login>Login</Login>
+      <OAuth>DGSD3DS</OAuth>
+    </Twitch>
+    <Peka2tv>
+      <Enable>false</Enable>
+      <Channel>Regber.99</Channel>
+    </Peka2tv>
+  </API>
+  <Rutony>
+    <Enable>true</Enable>
+    <MD5Key>29c20c2e4c01f48e3455e881d0a262cf</MD5Key>
+  </Rutony>
+  <DonatProperty>
+    <DonatTestEnabled>true</DonatTestEnabled>
+    <DonatePay>
+      <Enable>false</Enable>
+      <AccessToken>1730CF63F8D8F8CE6A4EFA6451DC624B228350C16DFA697C938CCFAA827A0B0564B7E66845B526B0AFCF878E5ADCE43D1AEA2491637EB4AB9E8687A9B7F3B95F</AccessToken>
+    </DonatePay>
+    <DonationAlerts>
+      <Enable>true</Enable>
+      <Token>1654D07904853E311D4B05ADA5039F225A8261E3CBF366E6</Token>
+    </DonationAlerts>
+  </DonatProperty>
+  <Alerts Enable="true">
+    <BackgroundColor Red="30" Green="82" Blue="238" />
+    <AlertsList>
+      <Alert Enable="true" Type="Premium" ImageUri="C:\Users\Zevas\Desktop\Схемы\DSCN2813.jpg" Voice="oksana" VoiceVolume="41" Text="ывп" MusicUri="C:\Users\Zevas\Desktop\Легенда.mp3" MusicVolume="58">60</Alert>
+      <Alert Enable="true" Type="Donate" ImageUri="C:\Users\Zevas\Desktop\bolzman.png" Voice="oksana" VoiceVolume="100" Text="&lt;f,eqyz" MusicUri="C:\Users\Zevas\Music\ария\02 - Тореро.mp3" MusicVolume="100">454</Alert>
+      <Alert Enable="false" Type="Donate" ImageUri="sdg3.gif" Voice="oksana" VoiceVolume="100" Text="&lt;f,eqyz" MusicUri="4.mp3" MusicVolume="100">55</Alert>
+      <Alert Enable="false" Type="Donate" ImageUri="sdg3.gif" Voice="oksana" VoiceVolume="100" Text="&lt;f,eqyz" MusicUri="4.mp3" MusicVolume="100">55</Alert>
+      <Alert Enable="false" Type="Donate" ImageUri="C:\Users\Zevas\Desktop\bolzman.png" Voice="oksana" VoiceVolume="0" MusicVolume="0">0</Alert>
+    </AlertsList>
+  </Alerts>
+  <SlotMachine Enable="true">
+    <Barrels>
+      <Barrel>0</Barrel>
+      <Barrel>800</Barrel>
+      <Barrel>1000</Barrel>
+      <Barrel>3000</Barrel>
+      <Barrel>3500</Barrel>
+      <Barrel>4000</Barrel>
+      <Barrel>5000</Barrel>
+    </Barrels>
+    <BackgroundColor Red="235" Green="31" Blue="252" />
+  </SlotMachine>
+  <DonateBar>
+    <BackgroundColor Red="0" Green="0" Blue="0" />
+  </DonateBar>
+</Options>

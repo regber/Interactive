@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="InteractiveFallout4.DonatStatistic.DonatStatisticWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InteractiveFallout4.DonatStatistic"
+        mc:Ignorable="d"
+         Height="350" Width="600" Loaded="Window_Loaded">
+    <Grid Width="auto" Height="auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Calendar Name="mainCalendar" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" SelectionMode="SingleRange" SelectedDatesChanged="Calendar_SelectedDatesChanged"></Calendar>
+        <TextBlock Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10">Сумма:</TextBlock>
+        <TextBlock Name="sumTextBlock" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="55,0,0,10">1232213</TextBlock>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Отображение:"></Label>
+                <ComboBox Name="displayModeComboBox" Width="80" Height="20" SelectionChanged="ChangeSelectionOptions">
+                    <Label Content="По дням"/>
+                    <!--<Label Content="По месяцам"/>
+                    <Label Content="По годам"/>-->
+                </ComboBox>
+                <Label Content="Платформа:" Margin="20,0,0,0"></Label>
+                <ComboBox Name="PlatformComboBox" Width="80" Height="20" SelectionChanged="ChangeSelectionOptions">
+                    <Label Content="Все"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Донат:"></Label>
+                <ComboBox Name="DonatComboBox" Width="80" Height="20" SelectionChanged="ChangeSelectionOptions">
+                    <Label Content="Все"/>
+                </ComboBox>
+                <Label Content="Донатер:" Margin="20,0,0,0"></Label>
+                <ComboBox Name="DonatersComboBox" Width="80" Height="20" SelectionChanged="ChangeSelectionOptions">
+                    <Label Content="Все"/>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+        <Border Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Width="auto" Height="auto" BorderThickness="1" BorderBrush="Black">
+            <ScrollViewer Height="260" Width="380"  VerticalAlignment="Bottom"  HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden">
+                <Grid VerticalAlignment="Bottom">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Name="displayColumnsStackPanel" Orientation="Horizontal" Grid.Row="0">
+
+                        <DockPanel Height="175" Width="20" VerticalAlignment="Bottom" Margin="10,0,0,0">
+                            <Canvas Height="50" Width="20" Background="DarkBlue" DockPanel.Dock="Bottom" VerticalAlignment="Bottom"></Canvas>
+                            <Canvas Height="50" Width="20" Background="Pink" DockPanel.Dock="Bottom" VerticalAlignment="Bottom"></Canvas>
+                            <Label VerticalAlignment="Top" Content="500000 руб" Margin="-5,0,0,0">
+                                <Label.LayoutTransform>
+                                    <RotateTransform Angle="-90"></RotateTransform>
+                                </Label.LayoutTransform>
+                            </Label>
+                        </DockPanel>
+
+                        <Canvas Height="50" Width="20" Background="Aqua" VerticalAlignment="Bottom" Margin="10,0,0,0"></Canvas>
+                        <Canvas Height="70" Width="20" Background="Aqua" VerticalAlignment="Bottom" Margin="10,0,0,0"></Canvas>
+                        <Canvas Height="50" Width="20" Background="Aqua" VerticalAlignment="Bottom" Margin="10,0,0,0"></Canvas>
+                        <Canvas Height="50" Width="20" Background="Aqua" VerticalAlignment="Bottom" Margin="10,0,0,0"></Canvas>
+                        <Canvas Height="50" Width="20" Background="Aqua" VerticalAlignment="Bottom" Margin="10,0,0,0"></Canvas>
+                        <Canvas Height="70" Width="20" Background="Aqua" VerticalAlignment="Bottom" Margin="10,0,0,0"></Canvas>
+                        
+                    </StackPanel>
+                    <StackPanel Name="datesColumnStackPanel" Orientation="Horizontal" Grid.Row="1">
+                        
+                        <DockPanel Height="60" Width="20" VerticalAlignment="Top" Margin="10,0,0,0">
+                            <Label VerticalAlignment="Top" Content="04.10.20" Margin="-5,0,0,0">
+                                <Label.LayoutTransform>
+                                    <RotateTransform Angle="-90"></RotateTransform>
+                                </Label.LayoutTransform>
+                            </Label>
+                        </DockPanel>
+                        
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</UserControl>

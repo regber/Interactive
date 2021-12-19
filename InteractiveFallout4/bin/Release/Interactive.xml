@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<Interactive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <InteractiveSets ActiveSet="Сет №1">
+    <InteractiveSet Title="Сет №1">
+      <InteractiveCommand Title="Основная">
+        <CommandPayment Type="Donate">0</CommandPayment>
+        <CommandType Type="Основной" Variable="InteractivMainGlobVal" Text="Основная переменная запускающая интерактив квест">0</CommandType>
+        <CommandAlert Enable="true" ImageUri="C:\Users\Zevas\Desktop\bolzman.png" Voice="jane" VoiceVolume="39" Text="выпывп" MusicUri="C:\Users\Zevas\Desktop\Легенда.mp3" MusicVolume="45" />
+        <CommandMemoryWrites>
+          <CommandMemoryWrite Variable="InteractivMainGlobVal" Text="11" Type="GetAddAndWrite">1.5</CommandMemoryWrite>
+          <CommandMemoryWrite Variable="InteractivChangeWeaponQuestGVWeaponNumber" Text="22" Type="Write">2</CommandMemoryWrite>
+          <CommandMemoryWrite Variable="Default" Type="Write">0</CommandMemoryWrite>
+        </CommandMemoryWrites>
+      </InteractiveCommand>
+      <InteractiveCommand Title="Основная2">
+        <CommandPayment Type="Donate">0</CommandPayment>
+        <CommandType Type="New Type №0" Variable="Default">0</CommandType>
+        <CommandMemoryReads>
+          <CommandMemoryRead Variable="InteractivTrapGrenadeTypeProjectile" Text="цуецуец">1</CommandMemoryRead>
+          <CommandMemoryRead Variable="InteractivMainGlobVal" Text="цвпыпывпыв">2</CommandMemoryRead>
+          <CommandMemoryRead Variable="InteractivTrapGrenadeCountProjectile" Text="ывсчичсичсичси">3</CommandMemoryRead>
+        </CommandMemoryReads>
+      </InteractiveCommand>
+      <InteractiveCommand Title="New Command №2">
+        <CommandPayment Type="Donate">0</CommandPayment>
+        <CommandType Type="Default" Variable="Default">0</CommandType>
+      </InteractiveCommand>
+      <InteractiveCommand Title="New Command №4">
+        <CommandPayment Type="Donate">0</CommandPayment>
+        <CommandType Type="Основной" Variable="InteractivMainGlobVal" Text="Основная переменная запускающая интерактив квест">0</CommandType>
+      </InteractiveCommand>
+      <InteractiveCommand Title="New Command №3">
+        <CommandPayment Type="Donate">0</CommandPayment>
+        <CommandType Type="Default" Variable="Default">0</CommandType>
+        <CommandAlert Enable="true" ImageUri="C:\Users\Zevas\Desktop\bolzman.png" Voice="omazh" VoiceVolume="0" Text="" MusicUri="" MusicVolume="0" />
+      </InteractiveCommand>
+    </InteractiveSet>
+    <InteractiveSet Title="Сет №2" />
+    <InteractiveSet Title="Сет №1">
+      <InteractiveCommand Title="Основная">
+        <CommandPayment Type="Follow">0</CommandPayment>
+        <CommandType Type="Основной" Variable="InteractivMainGlobVal" Text="Основная переменная запускающая интерактив квест">0</CommandType>
+        <CommandAlert Enable="true" ImageUri="C:\Users\Zevas\Desktop\bolzman.png" Voice="jane" VoiceVolume="39" Text="выпывп" MusicUri="C:\Users\Zevas\Desktop\Легенда.mp3" MusicVolume="45" />
+        <CommandMemoryWrites>
+          <CommandMemoryWrite Variable="InteractivMainGlobVal" Text="11" Type="GetAddAndWrite">1.5</CommandMemoryWrite>
+          <CommandMemoryWrite Variable="InteractivChangeWeaponQuestGVWeaponNumber" Text="22" Type="Write">2</CommandMemoryWrite>
+          <CommandMemoryWrite Variable="Default" Type="Write">0</CommandMemoryWrite>
+        </CommandMemoryWrites>
+      </InteractiveCommand>
+      <InteractiveCommand Title="Основная2">
+        <CommandPayment Type="Donate">0</CommandPayment>
+        <CommandType Type="New Type №0" Variable="Default">0</CommandType>
+        <CommandMemoryReads>
+          <CommandMemoryRead Variable="InteractivTrapGrenadeTypeProjectile" Text="цуецуец">1</CommandMemoryRead>
+          <CommandMemoryRead Variable="InteractivMainGlobVal" Text="цвпыпывпыв">2</CommandMemoryRead>
+          <CommandMemoryRead Variable="InteractivTrapGrenadeCountProjectile" Text="ывсчичсичсичси">3</CommandMemoryRead>
+        </CommandMemoryReads>
+      </InteractiveCommand>
+      <InteractiveCommand Title="New Command №2">
+        <CommandPayment Type="Donate">0</CommandPayment>
+        <CommandType Type="Default" Variable="Default">0</CommandType>
+      </InteractiveCommand>
+      <InteractiveCommand Title="New Command №4">
+        <CommandPayment Type="Donate">0</CommandPayment>
+        <CommandType Type="Основной" Variable="InteractivMainGlobVal" Text="Основная переменная запускающая интерактив квест">0</CommandType>
+      </InteractiveCommand>
+      <InteractiveCommand Title="New Command №3">
+        <CommandPayment Type="Donate">0</CommandPayment>
+        <CommandType Type="Default" Variable="Default">0</CommandType>
+        <CommandAlert Enable="true" ImageUri="C:\Users\Zevas\Desktop\bolzman.png" Voice="omazh" VoiceVolume="0" Text="" MusicUri="" MusicVolume="0" />
+      </InteractiveCommand>
+    </InteractiveSet>
+    <InteractiveSet Title="Сет №2" />
+  </InteractiveSets>
+  <InteractiveVariables StandartValue="123444">
+    <InteractiveVariable Variable="InteractivMainGlobVal" СalibrationValue="123445" />
+    <InteractiveVariable Variable="InteractivChangeWeaponQuestGVWeaponNumber" СalibrationValue="123446" />
+    <InteractiveVariable Variable="InteractivChangeWeaponWepScriptGVBarrel_2_Value" СalibrationValue="123447" />
+    <InteractiveVariable Variable="InteractivChangeWeaponWepScriptGVBarrel_3_Value" СalibrationValue="123448" />
+    <InteractiveVariable Variable="InteractivChangeWeaponWepScriptGVBarrel_4_Value" СalibrationValue="123449" />
+    <InteractiveVariable Variable="InteractivChangeWeaponWepScriptGVBarrel_5_Value" СalibrationValue="123450" />
+    <InteractiveVariable Variable="InteractivChangeWeaponWepScriptGVBarrel_6_Value" СalibrationValue="123451" />
+    <InteractiveVariable Variable="InteractivChangeWeaponWepScriptGVBarrel_7_Value" СalibrationValue="123452" />
+    <InteractiveVariable Variable="InteractivTrapGrenadeTypeProjectile" СalibrationValue="123453" />
+    <InteractiveVariable Variable="InteractivTrapGrenadeCountProjectile" СalibrationValue="123454" />
+    <InteractiveVariable Variable="InteractivTrapGrenadeCircleDiameterMultipler" СalibrationValue="123455" />
+    <InteractiveVariable Variable="InteractivSpawnQuestScriptGVBarrel_1_Value" СalibrationValue="123456" />
+    <InteractiveVariable Variable="InteractivSpawnQuestScriptGVBarrel_2_Value" СalibrationValue="123457" />
+    <InteractiveVariable Variable="InteractivSpawnQuestScriptGVBarrel_3_Value" СalibrationValue="123458" />
+    <InteractiveVariable Variable="InteractivSpawnQuestScriptGVBarrel_4_Value" СalibrationValue="123459" />
+    <InteractiveVariable Variable="InteractivSpawnQuestScriptGVBarrel_5_Value" СalibrationValue="123460" />
+    <InteractiveVariable Variable="InteractivSpawnQuestScriptGVBarrel_6_Value" СalibrationValue="123461" />
+    <InteractiveVariable Variable="InteractivSpawnQuestScriptGVBarrel_7_Value" СalibrationValue="123462" />
+    <InteractiveVariable Variable="InteractivSpawnQuest_GV_Check_Interior" СalibrationValue="123463" />
+    <InteractiveVariable Variable="InteractivWeatherQuest_GV_MGEF" СalibrationValue="123464" />
+  </InteractiveVariables>
+  <InteractiveCommandTypes>
+    <InteractiveCommandType Type="Основной" Variable="InteractivMainGlobVal" Text="Основная переменная запускающая интерактив квест">0</InteractiveCommandType>
+    <InteractiveCommandType Type="New Type №1" Variable="Default">0</InteractiveCommandType>
+    <InteractiveCommandType Type="New Type №0" Variable="InteractivTrapGrenadeTypeProjectile">10</InteractiveCommandType>
+  </InteractiveCommandTypes>
+</Interactive>

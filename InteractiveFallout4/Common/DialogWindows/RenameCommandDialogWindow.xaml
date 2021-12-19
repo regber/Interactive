@@ -1,0 +1,44 @@
+﻿<Window x:Class="InteractiveFallout4.Common.DialogWindows.RenameCommandDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InteractiveFallout4.Common.DialogWindows"
+        mc:Ignorable="d"
+        Title="DialogWindow" Height="100" Width="400" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:RenameCommandDialogWindowViewModel></local:RenameCommandDialogWindowViewModel>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="textValidationError" TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="ToolTip"  Value="{Binding (Validation.Errors)[0].ErrorContent, RelativeSource={RelativeSource Mode=Self}}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <local:ActualWidthConverter x:Key="ActualWidthConverter"></local:ActualWidthConverter>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock VerticalAlignment="Center" Text="Название:"></TextBlock>
+            <!--TextBox Text="{Binding NewObjectName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" Width="{Binding RelativeSource={RelativeSource AncestorType=Grid,Mode=FindAncestor}, Path=ActualWidth}"></TextBox-->
+            <TextBox Style="{StaticResource textValidationError}" VerticalAlignment="Center" Width="{Binding RelativeSource={RelativeSource AncestorType=Grid,Mode=FindAncestor}, Converter={StaticResource ActualWidthConverter}, Path=ActualWidth}">
+                <Binding Path="NewObjectName"  UpdateSourceTrigger="PropertyChanged" Mode="TwoWay" >
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox>
+        </StackPanel>
+        <Grid Margin="0 5 0 0" Grid.Row="1">
+            <Button Content="Ок" Command="{Binding AcceptButtonCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=local:RenameCommandDialogWindow,Mode=FindAncestor}}" Width="100" HorizontalAlignment="Left"></Button>
+            <Button Content="Отмена" Command="{Binding   CloseRenameDialogWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=local:RenameCommandDialogWindow,Mode=FindAncestor}}"  Width="100" HorizontalAlignment="Right"></Button>
+        </Grid>
+    </Grid>
+</Window>

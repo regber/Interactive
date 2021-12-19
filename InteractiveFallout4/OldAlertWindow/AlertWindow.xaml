@@ -1,0 +1,28 @@
+﻿<Window x:Class="OldAlertWindow.AlertWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OldAlertWindow"
+        xmlns:wpfanimated="http://wpfanimatedgif.codeplex.com"
+        xmlns:Converters="clr-namespace:InteractiveFallout4.Common.Converters"
+        mc:Ignorable="d"
+        Title="Проигрывание Алертов" Name="mainWindow"  SizeChanged="mainWindow_SizeChanged" Closing="Window_Closing" DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
+    <Window.Resources>
+        <Converters:ColorConverter x:Key="ColorConverter"></Converters:ColorConverter>
+    </Window.Resources>
+    <Window.Background>
+        <SolidColorBrush Color="{Binding BackgroundColor}"></SolidColorBrush>
+    </Window.Background>
+    <Grid Name="mainGrid" Margin="70">
+        <DockPanel Name="dockPanelResizeXML">
+            <TextBlock Name="myTextBlock" DockPanel.Dock="Bottom" TextAlignment="Center"/>
+            <Image Name="mainImage" DockPanel.Dock="Top" Stretch="Uniform"/>
+            <DockPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform x:Name="rectScale"/>
+                </TransformGroup>
+            </DockPanel.RenderTransform>
+        </DockPanel>
+    </Grid>
+</Window>

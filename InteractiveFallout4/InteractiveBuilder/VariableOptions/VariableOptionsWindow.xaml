@@ -1,0 +1,96 @@
+﻿<Window x:Class="InteractiveFallout4.InteractiveBuilder.VariableOptions.VariableOptionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InteractiveFallout4.InteractiveBuilder.VariableOptions"
+        mc:Ignorable="d"
+        Title="InteractiveVariableOptionsWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:VariableOptionsWindowViewModel x:Key="VariableOptionsWindowViewModel"/>
+        <!--Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Text"  Value="Default">
+                    <Setter Property="IsEnabled" Value="False" />
+                </Trigger>
+            </Style.Triggers>
+        </Style-->
+        <!--Style TargetType="TreeViewItem">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=PreviousData}}" Value="{x:Null}">
+                    <Setter Property="IsEnabled"  Value="False"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style-->
+        <!--Style x:Key="BlackAndWhite" TargetType="TreeViewItem">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=Self}, Path=DataContext.Variable}" Value="Default">
+                    <Setter Property="IsEnabled"  Value="False"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style-->
+        <!--Стиль для вывода смообщения об ошибке в тултипе-->
+        <Style x:Key="textValidationError" TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip" Value="{Binding (Validation.Errors)[0].ErrorContent, RelativeSource={x:Static RelativeSource.Self}}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Background="Gray">
+            <Menu Width="70">
+                <MenuItem Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type Border}, Mode=FindAncestor}}">
+                    <MenuItem.Header>
+                        <AccessText HorizontalAlignment="Center"  VerticalAlignment="Center"  FontSize="18" Text="Меню"/>
+                    </MenuItem.Header>
+                    <MenuItem Header="Добавить переменную" DataContext="{StaticResource VariableOptionsWindowViewModel}" Command="{Binding AddNewVariable}"/>
+                    <MenuItem Header="Сохранить изменения" DataContext="{StaticResource VariableOptionsWindowViewModel}" Command="{Binding SaveChangeVariable}"/>
+                </MenuItem>
+            </Menu>
+            <TextBlock FontSize="18" Margin="10 0 5 0" VerticalAlignment="Center"><Run Text="Стандартное значение памяти:"/></TextBlock>
+            <TextBox VerticalContentAlignment="Center" Width="150"  Text="{Binding  Path={x:Static local:VariableOptionsWindowViewModel.StandartValue}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,StringFormat=F2}"/>
+        </StackPanel>
+        <TreeView DataContext="{StaticResource VariableOptionsWindowViewModel}" ItemsSource="{Binding InteractiveVariablesList}" Grid.Row="1">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate>
+                    <StackPanel Background="LightGray"  Margin="2" Orientation="Horizontal">
+                        <StackPanel.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Удалить" DataContext="{StaticResource VariableOptionsWindowViewModel}" Command="{Binding Delete}" CommandParameter="{Binding Path=PlacementTarget.DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ContextMenu}}}"/>
+                            </ContextMenu>
+                        </StackPanel.ContextMenu>
+                        <TextBlock Margin="5 0 5 0" VerticalAlignment="Center"><Run Text="Переменная:"/></TextBlock>
+
+                        <TextBox Style="{StaticResource textValidationError}" VerticalAlignment="Center" Width="340">
+                            <Binding Path="Variable" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule></DataErrorValidationRule>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
+
+                        <TextBlock Margin="5 0 5 0" VerticalAlignment="Center"><Run Text="Калибровочное значение:"/></TextBlock>
+                        <TextBox VerticalAlignment="Center" Width="150" Text="{Binding СalibrationValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,StringFormat=F2}"/>
+                    </StackPanel>
+                    <!--HierarchicalDataTemplate.ItemContainerStyle>
+                        <Style TargetType="TreeViewItem" BasedOn="{StaticResource BlackAndWhite}"></Style>
+                    </HierarchicalDataTemplate.ItemContainerStyle-->
+                    <!--Тригер для отключения редактирования переменной Default-->
+                    <HierarchicalDataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding DataContext.Variable, RelativeSource={RelativeSource Mode=Self}}" Value="Default">
+                            <Setter Property="IsEnabled"  Value="False"/>
+                        </DataTrigger>
+                    </HierarchicalDataTemplate.Triggers>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+    </Grid>
+</Window>

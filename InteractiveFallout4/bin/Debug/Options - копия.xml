@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <API>
+    <GoodGame>
+      <Enable>true</Enable>
+      <Channel>Regber.88</Channel>
+      <Login>Regber.88</Login>
+      <Password>75030E5EB09787646293826366B38F7A</Password>
+    </GoodGame>
+    <Twitch>
+      <Enable>false</Enable>
+      <Channel>Fartper</Channel>
+      <Login>Fartper</Login>
+      <OAuth>9CFF62FE0E5D58A26F1DEFEC00A3AE00F34E2439D918F6424DBC1C975883B92E</OAuth>
+    </Twitch>
+    <Peka2tv>
+      <Enable>false</Enable>
+      <Channel>Regber</Channel>
+    </Peka2tv>
+  </API>
+  <Rutony>
+    <Enable>false</Enable>
+    <MD5Key>5f056edbba104c5b743d3531550607bd</MD5Key>
+  </Rutony>
+  <DonatProperty>
+    <DonatTestEnabled>false</DonatTestEnabled>
+    <DonatePay>
+      <Enable>false</Enable>
+      <AccessToken>1730CF63F8D8F8CE6A4EFA6451DC624B228350C16DFA697C938CCFAA827A0B0564B7E66845B526B0AFCF878E5ADCE43D1AEA2491637EB4AB9E8687A9B7F3B95F</AccessToken>
+    </DonatePay>
+    <DonationAlerts>
+      <Enable>false</Enable>
+      <Token>1654D07904853E311D4B05ADA5039F225A8261E3CBF366E6</Token>
+    </DonationAlerts>
+  </DonatProperty>
+  <Alerts Enable="true">
+    <AlertsList>
+      <Alert Enable="true" Type="Donar" ImageUri="sgd.gif" Voice="oksana" VoiceVolume="100" Text="Задонатил" MusicUri="4.mp3" MusicVolume="100">100</Alert>
+      <Alert Enable="true" Type="Donar" ImageUri="sgd.gif" Voice="oksana" VoiceVolume="100" Text="Задон" MusicUri="4.mp3" MusicVolume="100">0</Alert>
+	  <Alert Enable="false" Type="Donata" ImageUri="sdg1.gif" Voice="oksana" VoiceVolume="100" Text="&lt;f,eqyz" MusicUri="4.mp3" MusicVolume="100">55</Alert>
+      <Alert Enable="true" Type="Donata" ImageUri="sdg2.gif" Voice="oksana" VoiceVolume="100" Text="&lt;f,eqyz" MusicUri="4.mp3" MusicVolume="100">55</Alert>
+      <Alert Enable="true" Type="Donata" ImageUri="sdg3.gif" Voice="oksana" VoiceVolume="100" Text="&lt;f,eqyz" MusicUri="4.mp3" MusicVolume="100">55</Alert>
+      <Alert Enable="true" Type="Donata" ImageUri="sdg4.gif" Voice="oksana" VoiceVolume="100" Text="&lt;f,eqyz" MusicUri="4.mp3" MusicVolume="100">55</Alert>
+      <Alert Enable="true" Type="Donata" ImageUri="sdg5.gif" Voice="oksana" VoiceVolume="100" Text="&lt;f,eqyz" MusicUri="4.mp3" MusicVolume="100">55</Alert>
+    </AlertsList>
+  </Alerts>
+</Options>

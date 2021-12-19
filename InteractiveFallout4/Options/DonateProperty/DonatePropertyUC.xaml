@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="InteractiveFallout4.Options.DonateProperty.DonatePropertyUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InteractiveFallout4.Options.DonateProperty"
+             xmlns:BindingPasswordBox="clr-namespace:InteractiveFallout4.Common.Crypting"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+
+        <StackPanel Orientation="Vertical">
+            <GroupBox Header="Общие настройки донатов" Margin="5 5 5 0">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                    <TextBlock Text="Подключить тест донатов:" VerticalAlignment="Center" Margin="10 10 0 0"></TextBlock>
+                    <CheckBox IsChecked="{Binding Path={x:Static local:DonatePropertyUCViewModel.DonatTestEnabled}}"  VerticalAlignment="Center" Margin="14 10 0 0"></CheckBox>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="DonatePay">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Подключить:" VerticalAlignment="Center"  Margin="10 10 0 0"></TextBlock>
+                        <CheckBox IsChecked="{Binding Path={x:Static local:DonatePropertyUCViewModel+DonatePay.Enable}}"  VerticalAlignment="Center" Margin="14 10 0 0"></CheckBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="AccessToken:"  Margin="10 10 0 0" MinWidth="70"></TextBlock>
+                        <BindingPasswordBox:BindingPasswordBox Password="{Binding Path={x:Static local:DonatePropertyUCViewModel+DonatePay.AccessToken}}" Width="450" Margin="10 10 0 0" VerticalAlignment="Center"></BindingPasswordBox:BindingPasswordBox>
+                        <!--TextBox Text="{Binding Path={x:Static local:DonatePropertyUCViewModel+DonatePay.AccessToken}}" Width="450" Margin="10 10 0 0" VerticalAlignment="Center">
+                            </TextBox-->
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="DonationAlerts">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Подключить:" VerticalAlignment="Center"  Margin="10 10 0 0"></TextBlock>
+                        <CheckBox IsChecked="{Binding Path={x:Static local:DonatePropertyUCViewModel+DonationAlerts.Enable}}"  VerticalAlignment="Center" Margin="14 10 0 0"></CheckBox>
+                    </StackPanel>
+                    <GroupBox Header="Авторизация">
+                        <StackPanel Orientation="Vertical">
+                        <GroupBox Header="Шаг 1">
+                                <Button Content="Открыть страницу авторизации" Width="200" HorizontalAlignment="Left" Command="{x:Static local:DonatePropertyUCViewModel+DonationAlerts.GetAuthCodeCommand}">
+                                <Button.ToolTip>
+                                    <TextBlock Width="200" TextWrapping="WrapWithOverflow">При нажатии откроется окно браузера где потребуется дать разрешение приложению пользоваться API от вашей учетной записи на DonationAlerts, после чего скопируйте из адресной строки текст после "code=" и вставьте в поле ниже</TextBlock>
+                                </Button.ToolTip>
+                            </Button>
+                        </GroupBox>
+                            <GroupBox Header="Шаг 2">
+                                <TextBox Text="{Binding Path=(local:DonatePropertyUCViewModel+DonationAlerts.code)}"></TextBox>
+                            </GroupBox>
+                            <GroupBox Header="Шаг 3">
+                                <Button Content="Завершить авторизацию" Width="200" HorizontalAlignment="Left" Command="{x:Static local:DonatePropertyUCViewModel+DonationAlerts.GetAuthTokenCommand}"></Button>
+                            </GroupBox>
+                        </StackPanel>
+                    </GroupBox>
+
+
+                        <!--TextBlock Text="Token:"  Margin="10 10 0 0" MinWidth="70"></TextBlock-->
+                        <!--BindingPasswordBox:BindingPasswordBox Password="{Binding Path={x:Static local:DonatePropertyUCViewModel+DonationAlerts.Token}}" Width="450" Margin="10 10 0 0" VerticalAlignment="Center"></BindingPasswordBox:BindingPasswordBox-->
+                        <!--TextBox Text="{Binding Path={x:Static local:DonatePropertyUCViewModel+DonationAlerts.Token}}" Width="450" Margin="10 10 0 0" VerticalAlignment="Center"></TextBox-->
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

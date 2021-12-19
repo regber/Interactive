@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="InteractiveFallout4.Options.SlotMachine.SlotMachineUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InteractiveFallout4.Options.SlotMachine"
+             xmlns:Converters="clr-namespace:InteractiveFallout4.Common.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Converters:EnableConverter x:Key="EnableConverter"></Converters:EnableConverter>
+        <local:SlotMachineUCViewModel x:Key="SlotMachineUCViewModel"></local:SlotMachineUCViewModel>
+        <Converters:AlterationNumberConverter x:Key="AlterationNumberConverter"></Converters:AlterationNumberConverter>
+        <ControlTemplate x:Key="validationFailed">
+            <StackPanel Orientation="Horizontal">
+                <Border Margin="0 5 0 5" BorderBrush="Red" BorderThickness="1">
+                    <AdornedElementPlaceholder HorizontalAlignment="Center" VerticalAlignment="Center"></AdornedElementPlaceholder>
+                </Border>
+                <TextBlock Foreground="Red" FontSize="28">!</TextBlock>
+            </StackPanel>
+        </ControlTemplate>
+        
+        <Style x:Key="textBoxInError" TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Background="White">
+        <GroupBox Header="Настройки рулетки">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="230"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Vertical">
+                    <StackPanel Height="40" Orientation="Horizontal">
+                        <TextBlock Text="Включитиь зависимость кол-ва барабанов от уровня донатов:" Width="200" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                        <ComboBox VerticalAlignment="Center" ItemsSource="{x:Static local:SlotMachineUCViewModel.EnableList}" SelectedItem="{Binding Path={x:Static local:SlotMachineUCViewModel.Enable}, Converter={StaticResource EnableConverter}}" Width="100"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Height="40" Orientation="Horizontal">
+                        <Button Content="Цвет задника" Width="100" Margin="4" Command="{Binding Source={x:Static local:SlotMachineUCViewModel.SlotMachineColorWindowButtonClick}}"></Button>
+                    </StackPanel>
+                </StackPanel>
+                <TreeView xmlns:system="clr-namespace:System;assembly=mscorlib" ItemsControl.AlternationCount="{x:Static system:Int32.MaxValue}" DataContext="{StaticResource  SlotMachineUCViewModel}" ItemsSource="{Binding BarrelsTreeViewData}" Grid.Row="1">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate>
+                            <Border Background="Black" Margin="2">
+                                <StackPanel Orientation="Horizontal" Background="WhiteSmoke">
+                                    <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem},Path=(ItemsControl.AlternationIndex),StringFormat=Барабан №{0}, Converter={StaticResource AlterationNumberConverter}}"></TextBlock>
+                                    <TextBox Style="{StaticResource textBoxInError}" Width="100" Margin="2" Validation.ErrorTemplate="{StaticResource validationFailed}">
+                                        <Binding Path="Price">
+                                            <Binding.ValidationRules>
+                                                <DataErrorValidationRule />
+                                            </Binding.ValidationRules>
+                                        </Binding>
+                                    </TextBox>
+                                </StackPanel>
+                            </Border>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+                <StackPanel Grid.Row="2">
+                    <TextBlock FontSize="12" Text="Числа должны идти по возврастанию и быть больше нуля(кроме первого барабана, он всегда 0)">
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

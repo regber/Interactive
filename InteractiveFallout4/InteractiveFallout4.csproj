@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F93FBA8-C296-40D6-ABBD-B283F77466B9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>InteractiveFallout4</RootNamespace>
+    <AssemblyName>InteractiveFallout4</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.31\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="MainWindow\AlertsProcessor\AlertsProcessor.cs" />
+    <Compile Include="Common\Converters\Converters.cs" />
+    <Compile Include="Common\Crypting\BindingPasswordBox.xaml.cs">
+      <DependentUpon>BindingPasswordBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Crypting\Crypting.cs" />
+    <Compile Include="Common\DialogWindows\RenameCommandDialogWindow.xaml.cs">
+      <DependentUpon>RenameCommandDialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DialogWindows\RenameCommandDialogWindowViewModel.cs" />
+    <Compile Include="DonateStatistics\DonateStatistics.cs" />
+    <Compile Include="DonateStatistics\DonateStatisticsWindow.xaml.cs">
+      <DependentUpon>DonateStatisticsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DonateStatistics\DonateStatisticsWindowViewModel.cs" />
+    <Compile Include="DonateStatistics\OldWindow\DonatStatistic.xaml.cs">
+      <DependentUpon>DonatStatistic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractiveBuilder\CommandTypeOptions\CommandTypeOptionsWindow.xaml.cs">
+      <DependentUpon>CommandTypeOptionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractiveBuilder\CommandTypeOptions\CommandTypeOptionsWindowViewModel.cs" />
+    <Compile Include="InteractiveBuilder\Interactive.cs" />
+    <Compile Include="InteractiveBuilder\InteractiveBuilderWindow.xaml.cs">
+      <DependentUpon>InteractiveBuilderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractiveBuilder\InteractiveBuilderWindowViewModel.cs" />
+    <Compile Include="InteractiveBuilder\VariableOptions\VariableOptionsWindow.xaml.cs">
+      <DependentUpon>VariableOptionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractiveBuilder\VariableOptions\VariableOptionsWindowViewModel.cs" />
+    <Compile Include="InteractiveDonateBar\InteractiveDonateBarWindow.xaml.cs">
+      <DependentUpon>InteractiveDonateBarWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractiveDonateBar\InteractiveDonateBarWindowViewModel.cs" />
+    <Compile Include="MainWindow\CalibrationProcessor\CalibrationProcessor.cs" />
+    <Compile Include="MainWindow\CommandProcessor\CommandProcessor.cs" />
+    <Compile Include="InteractiveRoulette\InteractiveRouletteWindow.xaml.cs">
+      <DependentUpon>InteractiveRouletteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractiveRoulette\InteractiveRouletteWindowViewModel.cs" />
+    <Compile Include="MainWindow\MessageProcessor\MessageProcessor.cs" />
+    <Compile Include="MainWindow\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow\MainWindowViewModel.cs" />
+    <Compile Include="OldAlertWindow\AlertWindow.xaml.cs">
+      <DependentUpon>AlertWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options\Alerts\AlertsUCViewModel.cs" />
+    <Compile Include="Options\Alerts\AlertsUC.xaml.cs">
+      <DependentUpon>AlertsUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options\DonateBar\DonateBarUC.xaml.cs">
+      <DependentUpon>DonateBarUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options\DonateBar\DonateBarUCViewModel.cs" />
+    <Compile Include="Options\DonateProperty\DonatePropertyUC.xaml.cs">
+      <DependentUpon>DonatePropertyUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options\DonateProperty\DonatePropertyUCViewModel.cs" />
+    <Compile Include="Options\GoodGame\GoodGameUC.xaml.cs">
+      <DependentUpon>GoodGameUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options\GoodGame\GoodGameUCViewModel.cs" />
+    <Compile Include="Options\OptionsCommand.cs" />
+    <Compile Include="Options\Options.cs" />
+    <Compile Include="Options\OptionsViewModel.cs" />
+    <Compile Include="Options\OptionsWindow.xaml.cs">
+      <DependentUpon>OptionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options\Peka2tv\Peka2tvUC.xaml.cs">
+      <DependentUpon>Peka2tvUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options\Peka2tv\Peka2tvUCViewModel.cs" />
+    <Compile Include="Options\Rutony\Authentication\AuthMD5.cs" />
+    <Compile Include="Options\Rutony\RutonyUC.xaml.cs">
+      <DependentUpon>RutonyUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options\Rutony\RutonyUCViewModel.cs" />
+    <Compile Include="Options\SlotMachine\SlotMachineUC.xaml.cs">
+      <DependentUpon>SlotMachineUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options\SlotMachine\SlotMachineUCViewModel.cs" />
+    <Compile Include="Options\TreeViewModel.cs" />
+    <Compile Include="Options\Twitch\TwitchUC.xaml.cs">
+      <DependentUpon>TwitchUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options\Twitch\TwitchUCViewModel.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\Command.cs" />
+    <Compile Include="ViewModel\MainWindovViewModel.cs" />
+    <Page Include="Common\Crypting\BindingPasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Common\DialogWindows\RenameCommandDialogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DonateStatistics\DonateStatisticsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DonateStatistics\OldWindow\DonatStatistic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="InteractiveBuilder\CommandTypeOptions\CommandTypeOptionsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InteractiveBuilder\InteractiveBuilderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InteractiveBuilder\VariableOptions\VariableOptionsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InteractiveDonateBar\InteractiveDonateBarWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InteractiveRoulette\InteractiveRouletteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindow\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OldAlertWindow\AlertWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Options\Alerts\AlertsUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Options\DonateBar\DonateBarUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Options\DonateProperty\DonatePropertyUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Options\GoodGame\GoodGameUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Options\OptionsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Options\Peka2tv\Peka2tvUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Options\Rutony\RutonyUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Options\SlotMachine\SlotMachineUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Options\Twitch\TwitchUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="InteractiveRoulette\RouletteImageResources\Barrel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="InteractiveRoulette\RouletteImageResources\BottomPanel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="InteractiveRoulette\RouletteImageResources\LeftBottomCorner.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="InteractiveRoulette\RouletteImageResources\LeftPanel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="InteractiveRoulette\RouletteImageResources\LeftTopCorner.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="InteractiveRoulette\RouletteImageResources\RightBottomCorner.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="InteractiveRoulette\RouletteImageResources\RightPanel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="InteractiveRoulette\RouletteImageResources\RightTopCorner.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="InteractiveRoulette\RouletteImageResources\TopPanel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="InteractiveDonateBar\DonateBarImageResources\BottomPanel.png" />
+    <Resource Include="InteractiveDonateBar\DonateBarImageResources\CenterPanel.png" />
+    <Resource Include="InteractiveDonateBar\DonateBarImageResources\LeftBottomCorner.png" />
+    <Resource Include="InteractiveDonateBar\DonateBarImageResources\LeftPanel.png" />
+    <Resource Include="InteractiveDonateBar\DonateBarImageResources\LeftTopCorner.png" />
+    <Resource Include="InteractiveDonateBar\DonateBarImageResources\RightBottomCorner.png" />
+    <Resource Include="InteractiveDonateBar\DonateBarImageResources\RightPanel.png" />
+    <Resource Include="InteractiveDonateBar\DonateBarImageResources\RightTopCorner.png" />
+    <Resource Include="InteractiveDonateBar\DonateBarImageResources\TopPanel.png" />
+    <Content Include="InteractiveRoulette\RouletteSoundResources\rotation.mp3" />
+    <Content Include="InteractiveRoulette\RouletteSoundResources\stopRotationRotation.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="ChatSource\ChatSource.csproj">
+      <Project>{e8b912c3-8d78-4159-92d0-d778b11f2f9e}</Project>
+      <Name>ChatSource</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

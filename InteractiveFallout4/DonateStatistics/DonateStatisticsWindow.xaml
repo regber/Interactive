@@ -1,0 +1,37 @@
+﻿<Window x:Class="InteractiveFallout4.DonateStatistics.DonateStatisticsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InteractiveFallout4.DonateStatistics"
+        mc:Ignorable="d"
+        Title="DonateStatisticsWindow" Height="450" Width="800" ResizeMode="NoResize"  WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:DonateStatisticsWindowViewModel x:Key="DonateStatisticsWindowViewModel"></local:DonateStatisticsWindowViewModel>
+    </Window.Resources>
+    <Window.DataContext>
+        <Binding Source="{StaticResource DonateStatisticsWindowViewModel}"></Binding>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical">
+            <StackPanel Height="40" Orientation="Horizontal">
+                <Label Content="Текущий уровень доната:" VerticalAlignment="Center"></Label>
+                <TextBox Text="{Binding Path={x:Static local:DonateStatisticsWindowViewModel.CurrentDonateAmount}}" VerticalAlignment="Center" Width="200" Margin="0 0 0 0"></TextBox>
+            </StackPanel>
+            <Line X1="0" X2="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}}" Stroke="LightGray" StrokeThickness="2"></Line>
+            <Viewbox Height="330">
+                <ContentPresenter  Content= "{Binding  StatisticsWindow}"></ContentPresenter>
+            </Viewbox>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Grid.Row="1" Orientation="Vertical">
+            <StackPanel HorizontalAlignment="Right" Height="40" Orientation="Horizontal">
+                <Button Content="Ок" Command="{Binding  AcceptButtonClick}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" Height="30" Width="100"  Margin="0 0 10 0" ></Button>
+                <Button Content="Отмена" Command="{Binding CancelButtonClick}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" Height="30" Width="100" Margin="0 0 10 0"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

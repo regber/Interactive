@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="InteractiveFallout4.Options.GoodGame.GoodGameUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InteractiveFallout4.Options.GoodGame"
+             mc:Ignorable="d" 
+             xmlns:BindingPasswordBox="clr-namespace:InteractiveFallout4.Common.Crypting"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!--local:OptionsViewModel x:Key="OptionsViewModel"></>
+        <local:TreeViewModel x:Key="TreeViewModel"></local:TreeViewModel>
+        <local:GridViewModel x:Key="GridViewModel"></local:GridViewModel-->
+        <!--ObjectDataProvider x:Key="versionManager" ObjectType="{x:Type local:Options}" MethodName="get_FilterString"></ObjectDataProvider-->
+    </UserControl.Resources>
+
+
+<Grid Background="White">
+        
+        <GroupBox Header="Настройки GoodGame" Margin="5 5 5 0">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Подключен:" VerticalAlignment="Center" Margin="10 10 0 0" MaxWidth="70"></TextBlock>
+                    <CheckBox IsChecked="{Binding Path={x:Static local:GoodGameUCViewModel.Enable}}"  VerticalAlignment="Center" Margin="14 10 0 0"></CheckBox>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="10 10 0 0" MinWidth="70" Text="Канал:"></TextBlock>
+                    <!--TextBox Text="{Binding Source={x:Static local:Options+API+GoodGame.Channel},Mode=OneWay}" VerticalAlignment="Center" Margin="10 10 0 0" Width="200"></TextBox-->
+                    <!--TextBox Text="{x:Static local:Options+API+GoodGame.Channel}" /-->
+                    <!--TextBox Text="{Binding Source={x:Static local:Options+API+GoodGame.Channel},Path=Channel}"/-->
+                    <!--TextBox Text="{Binding Path=(local:Test+API+Twitch.Channel)}"></TextBox-->
+                    <!--TextBox DataContext="{StaticResource GridViewModel}" Text="{Binding Path=binding_22.Path, Mode=TwoWay}"></TextBox-->
+                    <TextBox Width="200" Margin="10 10 0 0" VerticalAlignment="Center" Text="{Binding Path={x:Static local:GoodGameUCViewModel.Channel}}"></TextBox>
+                    
+                    <!--Button Content="{Binding Source={x:Static local:Constants+Foo.Bar}}" /-->
+                    <!--Button Content="{Binding Source={x:Static local:Options+API+GoodGame.Channel}}" Width="136" /-->
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Логин:" Width="70" Margin="10 10 0 0" VerticalAlignment="Center"></TextBlock>
+                    <TextBox Text="{Binding Path={x:Static local:GoodGameUCViewModel.Login}}" VerticalAlignment="Center" Width="200" Margin="10 10 0 0"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Пароль:" Width="70" Margin="10 10 0 0" VerticalAlignment="Center"></TextBlock>
+                    <BindingPasswordBox:BindingPasswordBox Password="{Binding Path={x:Static local:GoodGameUCViewModel.Password}, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Width="200" Margin="10 10 0 0"></BindingPasswordBox:BindingPasswordBox>
+                    <!--TextBox Text="{Binding Path={x:Static local:GoodGameUCViewModel.Password}}"  VerticalAlignment="Center" Width="200" Margin="10 10 0 0"></TextBox-->
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        
+    </Grid>
+</UserControl>

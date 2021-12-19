@@ -1,0 +1,751 @@
+﻿<Window x:Class="InteractiveFallout4.InteractiveBuilder.InteractiveBuilderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InteractiveFallout4.InteractiveBuilder"
+        xmlns:Converters="clr-namespace:InteractiveFallout4.Common.Converters"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Конструктор" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:InteractiveBuilderWindowViewModel x:Key="InteractiveBuilderWindowViewModel"></local:InteractiveBuilderWindowViewModel>
+        <Converters:IsNullConverter x:Key="IsNullConverter"></Converters:IsNullConverter>
+        <Converters:EnableConverter x:Key="EnableConverter"></Converters:EnableConverter>
+        <Converters:UriConverter x:Key="UriConverter"></Converters:UriConverter>
+        <Converters:IsGreaterThanZero x:Key="IsGreaterThanZero"></Converters:IsGreaterThanZero>
+        <Converters:AlterationNumberConverter x:Key="AlterationNumberConverter"></Converters:AlterationNumberConverter>
+        <Converters:WriteTypeConverter x:Key="WriteTypeConverter"></Converters:WriteTypeConverter>
+        <Converters:DonateTypeConverter x:Key="DonateTypeConverter"></Converters:DonateTypeConverter>
+        <Converters:CommandMultParamConverter x:Key="CommandMultParamConverter"></Converters:CommandMultParamConverter>
+        <Converters:CurrentAppDirectoryConverter x:Key="CurrentAppDirectoryConverter"></Converters:CurrentAppDirectoryConverter>
+        <Style x:Key="BorderStyle" TargetType="{x:Type Border}">
+            <Style.Triggers>
+                <Trigger Property="Border.IsMouseOver" Value="True">
+                    <Setter Property="Border.Background" Value="WhiteSmoke" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Window.DataContext>
+        <local:InteractiveBuilderWindowViewModel></local:InteractiveBuilderWindowViewModel>
+    </Window.DataContext>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <i:InvokeCommandAction Command="{Binding CloseBuilderWindow}"></i:InvokeCommandAction>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <DockPanel  Background="Gray">
+            <Border Background="Black" BorderThickness="1">
+                <Menu Height="{Binding RelativeSource={RelativeSource AncestorType=StackPanel,Mode=FindAncestor},Path=ActualHeight}">
+                    <MenuItem Height="{Binding RelativeSource={RelativeSource AncestorType=StackPanel,Mode=FindAncestor},Path=ActualHeight}">
+                        <MenuItem.Header>
+                            <TextBlock FontSize="18" VerticalAlignment="Center">Меню</TextBlock>
+                        </MenuItem.Header>
+                        <MenuItem Header="Сохранить изменения" Command="{Binding Source={x:Static local:InteractiveBuilderWindowViewModel.SaveChangeInInteractiveSet}}" HorizontalAlignment="Stretch"></MenuItem>
+                        <MenuItem Header="Запустить слот-машину" DataContext="{StaticResource InteractiveBuilderWindowViewModel}" Command="{Binding  ShowInteractiveRouletteCommand}"  HorizontalAlignment="Stretch"></MenuItem>
+                        <MenuItem  DataContext="{StaticResource InteractiveBuilderWindowViewModel}" ItemsSource="{Binding SelectedSet.InteractiveSetCommandsList}" Header="Проверить команду"  HorizontalAlignment="Stretch">
+                            <MenuItem.ItemContainerStyle>
+                                <Style TargetType="MenuItem">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding CommBarrels.Count}" Value="0">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </MenuItem.ItemContainerStyle>
+
+                            <MenuItem.ItemTemplate>
+                                <HierarchicalDataTemplate AlternationCount="{x:Static system:Int32.MaxValue}" ItemsSource="{Binding CommBarrels}">
+                                    <TextBlock Text="{Binding Title}"></TextBlock>
+                                    <HierarchicalDataTemplate.ItemTemplate>
+                                        <HierarchicalDataTemplate>
+                                            <TextBlock Text="{Binding Path=(ItemsControl.AlternationIndex), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type MenuItem}}, StringFormat=Кол-во барабанов: {0}, Converter={StaticResource AlterationNumberConverter}}">
+                                                <TextBlock.InputBindings>
+                                                    <MouseBinding Command="{x:Static local:InteractiveBuilderWindowViewModel.TestInteractiveCommand}" MouseAction="LeftClick">
+                                                        <MouseBinding.CommandParameter>
+                                                            <MultiBinding Converter="{StaticResource CommandMultParamConverter}">
+                                                                <Binding Path="DataContext" RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType={x:Type MenuItem},AncestorLevel=2}"></Binding>
+                                                                <Binding Path="AlternationIndex" Converter="{StaticResource AlterationNumberConverter}" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type MenuItem}}"></Binding>
+                                                            </MultiBinding>
+                                                        </MouseBinding.CommandParameter>
+                                                    </MouseBinding>
+                                                </TextBlock.InputBindings>
+                                            </TextBlock>
+                                        </HierarchicalDataTemplate>
+                                    </HierarchicalDataTemplate.ItemTemplate>
+                                </HierarchicalDataTemplate>
+                            </MenuItem.ItemTemplate>
+                            
+                        </MenuItem>
+                        <MenuItem Header="Настройка типа команд" Command="{Binding Source={x:Static local:InteractiveBuilderWindowViewModel.ShowCommandTypeOptionsWindow}}"  HorizontalAlignment="Stretch"></MenuItem>
+                        <MenuItem Header="Настройка переменных" Command="{Binding Source={x:Static local:InteractiveBuilderWindowViewModel.ShowVariableOptionsWindow}}" HorizontalAlignment="Stretch"></MenuItem>
+                        <MenuItem Header="Справка" HorizontalAlignment="Stretch"></MenuItem>
+                    </MenuItem>
+                </Menu>
+            </Border>
+            <TextBlock Text="Активный набор:" Margin="10 0 0 0" FontSize="16" VerticalAlignment="Center"></TextBlock>
+            <!--Пришлось прикостыливаться через Name="SetsComboBox" для обновления текущего выбора в комбобоксе-->
+            <ComboBox Name="SetsComboBox" DataContext="{StaticResource InteractiveBuilderWindowViewModel}" ItemsSource="{Binding InteractiveSetsComboBoxData,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" SelectedValue="{Binding Path={x:Static local:InteractiveBuilderWindowViewModel.ActiveSet}}" SelectedValuePath="Title" Width="150">
+
+                <ComboBox.ItemTemplate >
+                    <HierarchicalDataTemplate>
+                        <TextBlock FontSize="16" Text="{Binding Title}"></TextBlock>
+                    </HierarchicalDataTemplate>
+                </ComboBox.ItemTemplate>
+                <ComboBox.Style>
+                    <Style TargetType="ComboBox">
+                        <Setter Property="SelectedItem" Value="{Binding SelectedSet, Mode=TwoWay}"></Setter>
+                    </Style>
+                </ComboBox.Style>
+                <!--i:Interaction.Triggers>
+                    <i:PropertyChangedTrigger Binding="{Binding SelectedSet}">
+                        <i:ChangePropertyAction PropertyName="SelectedValue" Value="{Binding Path={x:Static local:InteractiveBuilderWindowViewModel.ActiveSet}}"></i:ChangePropertyAction>
+                    </i:PropertyChangedTrigger>
+                </i:Interaction.Triggers-->
+            </ComboBox>
+            <Button Command="{Binding Source={x:Static local:InteractiveBuilderWindowViewModel.AddNewInteractiveSet}}" HorizontalAlignment="Left" Width="20">
+                <Button.ToolTip>
+                    <TextBlock Text="Добавить новый набор"></TextBlock>
+                </Button.ToolTip>
+                <Button.Content>
+                    <TextBlock VerticalAlignment="Center" FontSize="20">+</TextBlock>
+                </Button.Content>
+            </Button>
+            <Button Command="{Binding DeleteInteractiveSet}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Window}}}" HorizontalAlignment="Left" Width="20">
+                <Button.ToolTip>
+                    <TextBlock Text="Удалить набор"></TextBlock>
+                </Button.ToolTip>
+                <Button.Content>
+                    <TextBlock VerticalAlignment="Center" FontSize="20">-</TextBlock>
+                </Button.Content>
+            </Button>
+            <Button Content="?" FontSize="15" Width="40" Command="{x:Static local:InteractiveBuilderWindowViewModel.ShowHelp}" HorizontalAlignment="Right"></Button>
+        </DockPanel>
+        <TreeView  FontSize="16" DataContext="{StaticResource InteractiveBuilderWindowViewModel}" Grid.Row="1">
+            <!--Set-->
+            <TreeViewItem Header="{Binding SelectedSet.Title}">
+                <TreeViewItem.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Добавить команду" DataContext="{StaticResource  InteractiveBuilderWindowViewModel}" Command="{Binding AddNewInteractiveCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"/>
+                    </ContextMenu>
+                </TreeViewItem.ContextMenu>
+                <TreeView BorderThickness="0" DataContext="{Binding SelectedSet}" ItemsSource="{Binding InteractiveSetCommandsList, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate>
+
+                            <!--InteractiveCommand-->
+                            <TreeViewItem Margin="-25 0 0 0" Header="{Binding Title}">
+                                <TreeViewItem.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Переименовать команду" DataContext="{StaticResource  InteractiveBuilderWindowViewModel}" Command="{Binding  RenameCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"></MenuItem>
+                                        <MenuItem Header="Добавить алерт" Command="{x:Static local:InteractiveBuilderWindowViewModel.AddInteractiveAlert}" CommandParameter="{Binding Path=PlacementTarget.DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ContextMenu}}}">
+                                            <MenuItem.Style>
+                                                <Style TargetType="MenuItem">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding CommAlert, Converter={StaticResource IsNullConverter}}" Value="False">
+                                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </MenuItem.Style>
+                                        </MenuItem>
+                                        <MenuItem Header="Добавить чтение условий выполнения команды из памяти" Command="{x:Static local:InteractiveBuilderWindowViewModel.AddInteractiveMemoryRead}" CommandParameter="{Binding Path=PlacementTarget.DataContext, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}">
+                                            <MenuItem.Style>
+                                                <Style TargetType="MenuItem">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding  CommMemoryReads.Count, Converter={StaticResource IsGreaterThanZero}}" Value="true">
+                                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </MenuItem.Style>
+                                        </MenuItem>
+                                        <MenuItem Header="Добавить запись в память при выполнении команды" Command="{x:Static local:InteractiveBuilderWindowViewModel.AddInteractiveMemoryWrite}" CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=Self}}">
+                                            <MenuItem.Style>
+                                                <Style TargetType="MenuItem">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding  CommMemoryWrites.Count, Converter={StaticResource IsGreaterThanZero}}" Value="true">
+                                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </MenuItem.Style>
+                                        </MenuItem>
+                                        <MenuItem Header="Добавить рулетку" Command="{x:Static local:InteractiveBuilderWindowViewModel.AddRouletteToCommand}" CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=Self}}">
+                                            <MenuItem.Style>
+                                                <Style TargetType="MenuItem">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding  CommBarrels.Count, Converter={StaticResource IsGreaterThanZero}}" Value="true">
+                                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </MenuItem.Style>
+                                        </MenuItem>
+                                        <MenuItem Header="Удалить команду" DataContext="{StaticResource  InteractiveBuilderWindowViewModel}" Command="{Binding DeleteCommand}" CommandParameter="{Binding  PlacementTarget.DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ContextMenu}}}"></MenuItem>
+                                    </ContextMenu>
+                                </TreeViewItem.ContextMenu>
+
+                                <StackPanel>
+
+                                    <!--CommandPayment-->
+                                    <Border DataContext="{Binding CommPayment}" BorderBrush="Black" BorderThickness="1" Margin="1">
+                                        <StackPanel Orientation="Horizontal" Margin="2" >
+                                            <TextBlock Text="Тип платежа: " Margin="5 0 5 0"></TextBlock>
+                                            <ComboBox  Margin="5 0 5 0" Width="100" ItemsSource="{x:Static local:InteractiveBuilderWindowViewModel.PaymentTypeList}" SelectedItem="{Binding Type}">
+                                                <i:Interaction.Triggers>
+                                                    <i:EventTrigger EventName="SelectionChanged">
+                                                        <i:InvokeCommandAction Command="{x:Static local:InteractiveBuilderWindowViewModel.ComboBoxPriceTypeComandChangeValue}" CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ComboBox}}" />
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </ComboBox>
+                                            <TextBlock Text="Цена:" Margin="5 0 5 0">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Style.Triggers>
+                                                            <DataTrigger  Binding="{Binding Type,Converter={StaticResource DonateTypeConverter},UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Value="False">
+                                                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                            <TextBox Margin="5 0 5 0" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="100">
+                                                <TextBox.Style>
+                                                    <Style TargetType="TextBox">
+                                                        <Style.Triggers>
+                                                            <DataTrigger  Binding="{Binding Type,Converter={StaticResource DonateTypeConverter},UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Value="False">
+                                                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBox.Style>
+                                            </TextBox>
+                                        </StackPanel>
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                    </Border>
+
+                                    <!--CommandType-->
+                                    <Border BorderBrush="Black" BorderThickness="1" Margin="1">
+                                        <StackPanel DataContext="{Binding CommType}" Orientation="Horizontal" Margin="2" >
+
+                                            <TextBlock Text="Тип команды:" Margin="5 0 5 0"></TextBlock>
+                                            <ComboBox FontSize="16" x:Name="SelectedCommandType" Margin="5 0 5 0"  Width="150" ItemsSource="{x:Static local:InteractiveBuilderWindowViewModel.InteractiveCommandTypesList}"  SelectedValue="{Binding Path=Type, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedValuePath="Type"  >
+                                                <ComboBox.ItemTemplate>
+                                                    <HierarchicalDataTemplate>
+                                                        <TextBlock FontSize="12" Text="{Binding Type ,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBlock>
+                                                    </HierarchicalDataTemplate>
+                                                </ComboBox.ItemTemplate>
+
+                                                <i:Interaction.Triggers>
+                                                    <i:EventTrigger EventName="SelectionChanged">
+                                                        <i:InvokeCommandAction Command="{x:Static local:InteractiveBuilderWindowViewModel.ComboBoxTypeComandChangeValue}" >
+                                                            <i:InvokeCommandAction.CommandParameter>
+                                                                <MultiBinding Converter="{StaticResource CommandMultParamConverter}">
+                                                                    <Binding Path="SelectedItem" RelativeSource="{RelativeSource FindAncestor,AncestorType={x:Type ComboBox}}" ></Binding>
+                                                                    <Binding Path="Parent.DataContext" RelativeSource="{RelativeSource FindAncestor,AncestorType={x:Type ComboBox}}"></Binding>
+                                                                </MultiBinding>
+                                                            </i:InvokeCommandAction.CommandParameter>
+                                                        </i:InvokeCommandAction>
+                                                        <!--i:InvokeCommandAction Command="{x:Static local:InteractiveBuilderWindowViewModel.ComboBoxTypeComandChangeValue}" CommandParameter="{Binding ElementName=SelectedCommandType}" /-->
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </ComboBox>
+
+                                            <TextBlock Text="Переменная:" Margin="5 0 5 0"></TextBlock>
+                                            <TextBlock Background="LightGray"  MinWidth="200" DataContext="{Binding ElementName=SelectedCommandType}" Margin="5 0 5 0" Text="{Binding SelectedItem.Variable, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBlock>
+
+                                            <TextBlock Text="Текст:" Margin="5 0 5 0"></TextBlock>
+                                            <TextBlock Background="LightGray" DataContext="{Binding ElementName=SelectedCommandType}" Margin="5 0 5 0" Text="{Binding SelectedItem.Text,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBlock>
+
+                                            <TextBlock Text="Значение:" Margin="5 0 5 0"></TextBlock>
+                                            <TextBlock Background="LightGray" MinWidth="100" DataContext="{Binding ElementName=SelectedCommandType}" Margin="5 0 5 0" Text="{Binding SelectedItem.Value, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,StringFormat=F2}"></TextBlock>
+                                        </StackPanel>
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                    </Border>
+
+                                    <!--CommandAlert-->
+                                    <Border BorderBrush="Black" BorderThickness="1" Margin="1">
+                                        <StackPanel DataContext="{Binding CommAlert}" Orientation="Horizontal" Margin="2">
+                                            <TextBlock Text="Включить алерт:" VerticalAlignment="Center" Margin="5 0 5 0"></TextBlock>
+                                            <ComboBox Width="110" VerticalAlignment="Center" Margin="5 0 5 0" ItemsSource="{x:Static local:InteractiveBuilderWindowViewModel.EnableList}" SelectedItem="{Binding  Enable, Converter={StaticResource EnableConverter}, Mode=TwoWay}"></ComboBox>
+                                            <TextBlock Text="Изображ.:" VerticalAlignment="Center" Margin="5 0 5 0"/>
+                                            <TextBlock Width="100" Margin="5 0 5 0" VerticalAlignment="Center" Background="LightGray" Text="{Binding ImageUri, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource UriConverter},Mode=TwoWay}"></TextBlock>
+                                            <Button Content="Обзор" Width="70" VerticalAlignment="Center" Margin="5 0 5 0" Command="{x:Static local:InteractiveBuilderWindowViewModel.ImageUriBrowser }" CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource AncestorType={x:Type StackPanel}, Mode=FindAncestor}}">
+                                                <Button.ToolTip>
+                                                    <Image Source="{Binding ImageUri, Converter={StaticResource CurrentAppDirectoryConverter}}" MaxHeight="350"></Image>
+                                                </Button.ToolTip>
+                                            </Button>
+                                            <TextBlock Margin="5 0 5 0" Text="Голос:" VerticalAlignment="Center"></TextBlock>
+                                            <ComboBox Width="75" Margin="5 0 5 0" VerticalAlignment="Center" ItemsSource="{x:Static local:InteractiveBuilderWindowViewModel.AlertVoiceList}" SelectedItem="{Binding Voice, Mode=TwoWay}"></ComboBox>
+                                            <TextBlock Margin="5 0 5 0" Text="Громк. голоса:" VerticalAlignment="Center"></TextBlock>
+                                            <Slider Width="75" Margin="5 0 5 0" VerticalAlignment="Center" Minimum="0" Maximum="100" Value="{Binding VoiceVolume}"></Slider>
+                                            <TextBlock Margin="5 0 5 0" Text="Текст:" VerticalAlignment="Center"></TextBlock>
+                                            <TextBox Width="200" Margin="5 0 5 0"  Text="{Binding Text}" VerticalAlignment="Center"></TextBox>
+                                            <TextBlock Margin="5 0 5 0" Text="Музыка:" VerticalAlignment="Center"></TextBlock>
+                                            <TextBlock Width="130" Margin="5 0 5 0" VerticalAlignment="Center" Background="LightGray" Text="{Binding MusicUri, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource UriConverter},Mode=TwoWay}"></TextBlock>
+                                            <Button Content="Обзор" Width="70" VerticalAlignment="Center" Margin="5 0 5 0" Command="{x:Static local:InteractiveBuilderWindowViewModel.MusicUriBrowser}" CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type StackPanel}}}"></Button>
+                                            <TextBlock Margin="5 0 5 0" Text="Громк. музыки:" VerticalAlignment="Center"></TextBlock>
+                                            <Slider Width="75" Margin="5 0 5 0" VerticalAlignment="Center" Minimum="0" Maximum="100" Value="{Binding MusicVolume}"></Slider>
+                                            <StackPanel.ContextMenu>
+                                                <ContextMenu>
+                                                    <MenuItem Header="Удалить алерт" Command="{x:Static local:InteractiveBuilderWindowViewModel.DeleteInteractiveAlert}" CommandParameter="{Binding Path=PlacementTarget.Parent.DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ContextMenu}}}">
+                                                        <MenuItem.Style>
+                                                            <Style TargetType="MenuItem">
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding CommAlert, Converter={StaticResource IsNullConverter}}" Value="False">
+                                                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </MenuItem.Style>
+                                                    </MenuItem>
+                                                </ContextMenu>
+                                            </StackPanel.ContextMenu>
+                                        </StackPanel>
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding CommAlert, Converter={StaticResource IsNullConverter}}" Value="true">
+                                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                    </DataTrigger>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                    </Border>
+
+                                    <!--MemoryReads-->
+                                    <Border BorderBrush="Black" BorderThickness="1" MinHeight="28" Margin="1" >
+                                        <TreeViewItem Header="Чтение условий из памяти" Margin="0 0 10 0">
+                                            <TreeView ItemsControl.AlternationCount="{x:Static system:Int32.MaxValue}" ItemsSource="{Binding CommMemoryReads}">
+                                                <TreeView.ItemTemplate>
+                                                    <HierarchicalDataTemplate>
+                                                        <Border BorderBrush="Black" BorderThickness="1" Margin="1" Tag="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type TreeViewItem},AncestorLevel=3}}">
+                                                            <StackPanel Orientation="Horizontal" Margin="2">
+                                                                <TextBlock Text="{Binding Path=(ItemsControl.AlternationIndex), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}, StringFormat=Условие №{0}, Converter={StaticResource AlterationNumberConverter}}"/>
+                                                                <TextBlock Text="Переменная:" Margin="5 0 5 0"></TextBlock>
+                                                                <ComboBox Margin="5 0 5 0"  Width="300" ItemsSource="{x:Static local:InteractiveBuilderWindowViewModel.InteractiveVariablesList}"  SelectedValue="{Binding Path=Variable, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedValuePath="Variable"  >
+                                                                    <ComboBox.ItemTemplate>
+                                                                        <HierarchicalDataTemplate>
+                                                                            <TextBlock FontSize="12" Text="{Binding Variable,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBlock>
+                                                                        </HierarchicalDataTemplate>
+                                                                    </ComboBox.ItemTemplate>
+                                                                </ComboBox>
+                                                                <TextBlock Text="Примечание:" Margin="5 0 5 0"></TextBlock>
+                                                                <TextBox Width="250" Text="{Binding Text,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+                                                                <TextBlock Text="Значение:" Margin="5 0 5 0"></TextBlock>
+                                                                <TextBox Width="100"  Text="{Binding Value,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,StringFormat=F2}"></TextBox>
+                                                            </StackPanel>
+                                                            <Border.ContextMenu>
+                                                                <ContextMenu>
+                                                                    <MenuItem Header="Удалить условие читаймое из памяти" Command="{x:Static local:InteractiveBuilderWindowViewModel.DeleteInteractiveMemoryRead}" >
+                                                                        <MenuItem.CommandParameter>
+                                                                            <MultiBinding Converter="{StaticResource CommandMultParamConverter}">
+                                                                                <Binding Path="PlacementTarget.DataContext" RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType={x:Type ContextMenu}}"></Binding>
+                                                                                <Binding Path="PlacementTarget.Tag" RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType={x:Type ContextMenu}}"></Binding>
+                                                                            </MultiBinding>
+                                                                        </MenuItem.CommandParameter>
+                                                                    </MenuItem>
+                                                                </ContextMenu>
+                                                            </Border.ContextMenu>
+                                                            <Border.Style>
+                                                                <Style TargetType="Border">
+                                                                    <Style.Triggers>
+                                                                        <Trigger Property="Border.IsMouseOver" Value="True">
+                                                                            <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                                                        </Trigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Border.Style>
+                                                        </Border>
+                                                    </HierarchicalDataTemplate>
+                                                </TreeView.ItemTemplate>
+                                            </TreeView>
+                                        </TreeViewItem>
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding CommMemoryReads.Count}" Value="0">
+                                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                    </DataTrigger>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Border.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem Header="Добавить чтение из памяти" Command="{x:Static local:InteractiveBuilderWindowViewModel.AddInteractiveMemoryRead}" CommandParameter="{Binding Path=PlacementTarget.DataContext, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"></MenuItem>
+                                            </ContextMenu>
+                                        </Border.ContextMenu>
+                                    </Border>
+
+                                    <!--MemoryWrite-->
+                                    <Border BorderBrush="Black" BorderThickness="1" MinHeight="28" Margin="1" >
+                                        <TreeViewItem Header="Запись значений в память при выполнении команды" Margin="0 0 10 0">
+                                            <TreeView ItemsControl.AlternationCount="{x:Static system:Int32.MaxValue}" ItemsSource="{Binding  CommMemoryWrites}">
+                                                <TreeView.ItemTemplate>
+                                                    <HierarchicalDataTemplate>
+                                                        <Border BorderBrush="Black" BorderThickness="1" Margin="1" Tag="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type TreeViewItem},AncestorLevel=3}}">
+                                                            <StackPanel Orientation="Horizontal" Margin="2">
+                                                                <TextBlock Text="{Binding Path=(ItemsControl.AlternationIndex), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}, StringFormat=Запись №{0}, Converter={StaticResource AlterationNumberConverter}}"/>
+                                                                <TextBlock Text="Переменная:" Margin="5 0 5 0"></TextBlock>
+                                                                <ComboBox Margin="5 0 5 0"  Width="300" ItemsSource="{x:Static local:InteractiveBuilderWindowViewModel.InteractiveVariablesList}"  SelectedValue="{Binding Path=Variable, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedValuePath="Variable"  >
+                                                                    <ComboBox.ItemTemplate>
+                                                                        <HierarchicalDataTemplate>
+                                                                            <TextBlock FontSize="12" Text="{Binding  Variable,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBlock>
+                                                                        </HierarchicalDataTemplate>
+                                                                    </ComboBox.ItemTemplate>
+                                                                </ComboBox>
+                                                                <TextBlock Text="Примечание:" Margin="5 0 5 0"></TextBlock>
+                                                                <TextBox Width="250" Text="{Binding Text,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+                                                                <TextBlock Text="Значение:" Margin="5 0 5 0"></TextBlock>
+                                                                <TextBox Width="100"  Text="{Binding Value,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay, StringFormat=F2}"></TextBox>
+                                                                <TextBlock Text="Тип записи:" Margin="5 0 5 0"></TextBlock>
+
+                                                                <ComboBox Margin="5 0 5 0"  Width="150" ItemsSource="{x:Static local:InteractiveBuilderWindowViewModel.WriteTypeList}" SelectedValue="{Binding Path=Type, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource WriteTypeConverter}}"  >
+                                                                    <ComboBox.ItemTemplate>
+                                                                        <HierarchicalDataTemplate>
+                                                                            <TextBlock FontSize="12" Text="{Binding}"></TextBlock>
+                                                                        </HierarchicalDataTemplate>
+                                                                    </ComboBox.ItemTemplate>
+                                                                </ComboBox>
+
+                                                            </StackPanel>
+                                                            <Border.ContextMenu>
+                                                                <ContextMenu>
+                                                                    <MenuItem Header="Удалить запись в память" Command="{x:Static local:InteractiveBuilderWindowViewModel.DeleteInteractiveMemoryWrite}">
+                                                                        <MenuItem.CommandParameter>
+                                                                            <MultiBinding Converter="{StaticResource CommandMultParamConverter}">
+                                                                                <Binding Path="DataContext" RelativeSource="{RelativeSource Mode=Self}"></Binding>
+                                                                                <Binding Path="PlacementTarget.Tag" RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType={x:Type ContextMenu}}"></Binding>
+                                                                            </MultiBinding>
+                                                                        </MenuItem.CommandParameter>
+                                                                    </MenuItem>
+                                                                </ContextMenu>
+                                                            </Border.ContextMenu>
+                                                            <Border.Style>
+                                                                <Style TargetType="Border">
+                                                                    <Style.Triggers>
+                                                                        <Trigger Property="Border.IsMouseOver" Value="True">
+                                                                            <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                                                        </Trigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Border.Style>
+                                                        </Border>
+                                                    </HierarchicalDataTemplate>
+                                                </TreeView.ItemTemplate>
+                                            </TreeView>
+                                        </TreeViewItem>
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding CommMemoryWrites.Count}" Value="0">
+                                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                    </DataTrigger>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Border.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem Header="Добавить запись в память" Command="{x:Static local:InteractiveBuilderWindowViewModel.AddInteractiveMemoryWrite}" CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=Self}}"></MenuItem>
+                                            </ContextMenu>
+                                        </Border.ContextMenu>
+                                    </Border>
+
+                                    <!--Barrels-->
+                                    <Border  BorderBrush="Black" BorderThickness="1" MinHeight="28" Margin="1">
+                                        <TreeViewItem Header="Рулетка" Margin="0 0 10 0">
+                                            <TreeView ItemsControl.AlternationCount="{x:Static system:Int32.MaxValue}" ItemsSource="{Binding  CommBarrels}">
+                                                <TreeView.ItemTemplate>
+                                                    <HierarchicalDataTemplate>
+                                                        <Border BorderBrush="Black" BorderThickness="1" Margin="1" Tag="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type StackPanel}}}">
+                                                            <StackPanel Orientation="Horizontal" Margin="2">
+
+                                                                <!--Roulette-->
+                                                                <TreeViewItem  ItemsControl.AlternationCount="{x:Static system:Int32.MaxValue}" ItemsSource="{Binding  BarrelChoices}">
+
+                                                                    <!--Barrel-->
+                                                                    <TreeViewItem.Header>
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <TextBlock Text="{Binding Path=(ItemsControl.AlternationIndex), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem,AncestorLevel=2}, StringFormat=Барабан №{0}, Converter={StaticResource AlterationNumberConverter}}"/>
+                                                                            <TextBlock Text="Примечание:" Margin="5 0 5 0"></TextBlock>
+                                                                            <TextBox Width="250" Text="{Binding Text,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+                                                                        </StackPanel>
+                                                                    </TreeViewItem.Header>
+                                                                    <TreeViewItem.ItemTemplate>
+                                                                        <HierarchicalDataTemplate>
+                                                                            <TreeViewItem>
+                                                                                <TreeViewItem.Header>
+                                                                                    <Border BorderBrush="Black" BorderThickness="1" Margin="1" Tag="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=TreeViewItem,AncestorLevel=3}}">
+                                                                                        <StackPanel Orientation="Horizontal">
+                                                                                            <TextBlock Margin="5 0 5 0" Text="{Binding Path=(ItemsControl.AlternationIndex), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem,AncestorLevel=2}, StringFormat=Вариант №{0}:, Converter={StaticResource AlterationNumberConverter}}"/>
+                                                                                            <TextBlock VerticalAlignment="Center" Background="LightGray" Margin="5 0 5 0" Text="{Binding  ChoiceImageUri,Converter={StaticResource UriConverter}}" MinWidth="100"></TextBlock>
+                                                                                            <Button Content="Обзор" Margin="10 0 10 0"  Command="{x:Static local:InteractiveBuilderWindowViewModel.ImageUriBrowser}" CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Border}}}">
+                                                                                                <Button.ToolTip>
+                                                                                                    <Image Source="{Binding ChoiceImageUri, Converter={StaticResource CurrentAppDirectoryConverter}}" MaxHeight="350"></Image>
+                                                                                                </Button.ToolTip>
+                                                                                            </Button>
+                                                                                            <Slider Value="{Binding Chance, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Minimum="0" Maximum="100" Width="100" >
+                                                                                                <i:Interaction.Triggers>
+                                                                                                    <i:EventTrigger EventName="ValueChanged">
+                                                                                                        <i:InvokeCommandAction Command="{x:Static local:InteractiveBuilderWindowViewModel.SliderChanceChangeValue}">
+                                                                                                            <i:InvokeCommandAction.CommandParameter>
+                                                                                                                <MultiBinding Converter="{StaticResource CommandMultParamConverter}">
+                                                                                                                    <Binding Path="Value" RelativeSource="{RelativeSource FindAncestor,AncestorType={x:Type Slider}}"></Binding>
+                                                                                                                    <Binding></Binding>
+                                                                                                                    <Binding Path="Tag" RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType={x:Type Border}}"></Binding>
+                                                                                                                </MultiBinding>
+                                                                                                            </i:InvokeCommandAction.CommandParameter>
+                                                                                                        </i:InvokeCommandAction>
+                                                                                                    </i:EventTrigger>
+                                                                                                    <i:EventTrigger EventName="LostMouseCapture">
+                                                                                                        <i:InvokeCommandAction Command="{x:Static local:InteractiveBuilderWindowViewModel.LostMouseCapture}">
+                                                                                                            <i:InvokeCommandAction.CommandParameter>
+                                                                                                                <MultiBinding Converter="{StaticResource CommandMultParamConverter}">
+                                                                                                                    <Binding Path="Value" RelativeSource="{RelativeSource FindAncestor,AncestorType={x:Type Slider}}"></Binding>
+                                                                                                                    <Binding></Binding>
+                                                                                                                    <Binding Path="Tag" RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType={x:Type Border}}"></Binding>
+                                                                                                                </MultiBinding>
+                                                                                                            </i:InvokeCommandAction.CommandParameter>
+                                                                                                        </i:InvokeCommandAction>
+                                                                                                    </i:EventTrigger>
+                                                                                                </i:Interaction.Triggers>
+                                                                                            </Slider>
+                                                                                            <TextBlock Text="{Binding Chance,StringFormat=F2}" VerticalAlignment="Center" Background="LightGray" Margin="5 0 5 0" Width="50"></TextBlock>
+                                                                                            <TextBlock></TextBlock>
+                                                                                        </StackPanel>
+                                                                                        <Border.ContextMenu>
+                                                                                            <ContextMenu>
+                                                                                                <MenuItem Header="Добавить запись в память" Command="{x:Static local:InteractiveBuilderWindowViewModel.AddMemoryWriteToChoice}" CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=Self}}"></MenuItem>
+                                                                                                <MenuItem Header="Удалить вариант"  Command="{x:Static local:InteractiveBuilderWindowViewModel.DeleteChoiceFromBarrel}">
+                                                                                                    <MenuItem.CommandParameter>
+                                                                                                        <MultiBinding Converter="{StaticResource CommandMultParamConverter}">
+                                                                                                            <Binding Path="DataContext" RelativeSource="{RelativeSource Mode=Self}"/>
+                                                                                                            <Binding Path="PlacementTarget.Tag" RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}"></Binding>
+                                                                                                        </MultiBinding>
+                                                                                                    </MenuItem.CommandParameter>
+                                                                                                </MenuItem>
+                                                                                            </ContextMenu>
+                                                                                        </Border.ContextMenu>
+                                                                                        <Border.Style>
+                                                                                            <Style TargetType="Border">
+                                                                                                <Style.Triggers>
+                                                                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                                                                        <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                                                                                    </Trigger>
+                                                                                                </Style.Triggers>
+                                                                                            </Style>
+                                                                                        </Border.Style>
+                                                                                    </Border>
+                                                                                </TreeViewItem.Header>
+                                                                                <ItemsControl ItemsSource="{Binding ChoiceMemoryWrites}" AlternationCount="{x:Static system:Int32.MaxValue}">
+                                                                                    <ItemsControl.ItemTemplate>
+                                                                                        <HierarchicalDataTemplate>
+                                                                                            <ListBox BorderBrush="Black" BorderThickness="1" Margin="1" Tag="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl}}">
+                                                                                                <StackPanel Orientation="Horizontal" Margin="2">
+                                                                                                    <TextBlock Text="{Binding Path=(ItemsControl.AlternationIndex), RelativeSource={RelativeSource Mode=TemplatedParent}, StringFormat=Запись №{0}, Converter={StaticResource AlterationNumberConverter}}"/>
+                                                                                                    <TextBlock Text="Переменная:" Margin="5 0 5 0"></TextBlock>
+                                                                                                    <ComboBox Margin="5 0 5 0"  Width="300" ItemsSource="{x:Static local:InteractiveBuilderWindowViewModel.InteractiveVariablesList}"  SelectedValue="{Binding Path=Variable, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedValuePath="Variable"  >
+                                                                                                        <ComboBox.ItemTemplate>
+                                                                                                            <HierarchicalDataTemplate>
+                                                                                                                <TextBlock FontSize="12" Text="{Binding  Variable,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBlock>
+                                                                                                            </HierarchicalDataTemplate>
+                                                                                                        </ComboBox.ItemTemplate>
+                                                                                                    </ComboBox>
+                                                                                                    <TextBlock Text="Примечание:" Margin="5 0 5 0"></TextBlock>
+                                                                                                    <TextBox Width="250" Text="{Binding Text,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+                                                                                                    <TextBlock Text="Значение:" Margin="5 0 5 0"></TextBlock>
+                                                                                                    <TextBox Width="100"  Text="{Binding Value,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay, StringFormat=F2}"></TextBox>
+                                                                                                    <TextBlock Text="Тип записи:" Margin="5 0 5 0"></TextBlock>
+
+                                                                                                    <ComboBox Margin="5 0 5 0"  Width="150" ItemsSource="{x:Static local:InteractiveBuilderWindowViewModel.WriteTypeList}" SelectedValue="{Binding Path=Type, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource WriteTypeConverter}}"  >
+                                                                                                        <ComboBox.ItemTemplate>
+                                                                                                            <HierarchicalDataTemplate>
+                                                                                                                <TextBlock FontSize="12" Text="{Binding}"></TextBlock>
+                                                                                                            </HierarchicalDataTemplate>
+                                                                                                        </ComboBox.ItemTemplate>
+                                                                                                    </ComboBox>
+
+                                                                                                </StackPanel>
+                                                                                                <ListBox.ContextMenu>
+                                                                                                    <ContextMenu>
+                                                                                                        <MenuItem Header="Удалить запись в память" Command="{x:Static local:InteractiveBuilderWindowViewModel.DeleteMemoryWritefromChoice}">
+                                                                                                            <MenuItem.CommandParameter>
+                                                                                                                <MultiBinding Converter="{StaticResource CommandMultParamConverter}">
+                                                                                                                    <Binding Path="DataContext" RelativeSource="{RelativeSource Mode=Self}"></Binding>
+                                                                                                                    <Binding Path="PlacementTarget.Tag" RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType={x:Type ContextMenu}}"></Binding>
+                                                                                                                </MultiBinding>
+                                                                                                            </MenuItem.CommandParameter>
+                                                                                                        </MenuItem>
+                                                                                                    </ContextMenu>
+                                                                                                </ListBox.ContextMenu>
+                                                                                                <ListBox.Style>
+                                                                                                    <Style TargetType="ListBox">
+                                                                                                        <Style.Triggers>
+                                                                                                            <DataTrigger Binding="{Binding  ChoiceMemoryWrites.Count}" Value="0">
+                                                                                                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                                                                            </DataTrigger>
+                                                                                                            <Trigger Property="Border.IsMouseOver" Value="True">
+                                                                                                                <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                                                                                            </Trigger>
+                                                                                                        </Style.Triggers>
+                                                                                                    </Style>
+                                                                                                </ListBox.Style>
+                                                                                            </ListBox>
+                                                                                        </HierarchicalDataTemplate>
+                                                                                    </ItemsControl.ItemTemplate>
+                                                                                </ItemsControl>
+                                                                            </TreeViewItem>
+                                                                        </HierarchicalDataTemplate>
+                                                                    </TreeViewItem.ItemTemplate>
+
+                                                                    <!--Choice-->
+                                                                    <!--TreeViewItem ItemsControl.AlternationCount="{x:Static system:Int32.MaxValue}" ItemsSource="{Binding  BarrelChoices}">
+                                                                        <TreeViewItem.ItemTemplate>
+                                                                            <HierarchicalDataTemplate>
+                                                                                <Border>
+
+                                                                                    <StackPanel Orientation="Horizontal">
+                                                                                        <TextBlock Text="{Binding Path=(ItemsControl.AlternationIndex), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}, StringFormat=Вариант №{0}:, Converter={StaticResource AlterationNumberConverter}}"/>
+                                                                                        <TextBlock Text="{Binding ChiceImageUri}"></TextBlock>
+                                                                                    </StackPanel>
+                                                                                </Border>
+                                                                            </HierarchicalDataTemplate>
+                                                                        </TreeViewItem.ItemTemplate>
+                                                                        
+                                                                        <TreeViewItem.Style>
+                                                                            <Style TargetType="TreeViewItem">
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding BarrelChoice.Count}" Value="0">
+                                                                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                                                    </DataTrigger>
+                                                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                                                        <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                                                                    </Trigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                            </TreeViewItem.Style>
+                                                                    </TreeViewItem-->
+
+                                                                    <!--TextBlock>123</TextBlock-->
+                                                                    <TreeViewItem.Style>
+                                                                        <Style TargetType="TreeViewItem">
+                                                                            <Style.Triggers>
+                                                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                                                    <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                                                                </Trigger>
+                                                                            </Style.Triggers>
+                                                                        </Style>
+                                                                    </TreeViewItem.Style>
+                                                                </TreeViewItem>
+
+                                                            </StackPanel>
+                                                            <Border.ContextMenu>
+                                                                <ContextMenu>
+                                                                    <MenuItem Header="Добавить вариант" Command="{x:Static local:InteractiveBuilderWindowViewModel.AddChoiceToBarrel}" CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=Self}}"></MenuItem>
+                                                                    <MenuItem Header="Удалить барабан" Command="{x:Static local:InteractiveBuilderWindowViewModel.DeleteBarrel}">
+                                                                        <MenuItem.CommandParameter>
+                                                                            <MultiBinding Converter="{StaticResource CommandMultParamConverter}">
+                                                                                <Binding Path="DataContext" RelativeSource="{RelativeSource Mode=Self}"></Binding>
+                                                                                <Binding Path="PlacementTarget.Tag" RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType={x:Type ContextMenu}}"></Binding>
+                                                                            </MultiBinding>
+                                                                        </MenuItem.CommandParameter>
+                                                                    </MenuItem>
+                                                                </ContextMenu>
+                                                            </Border.ContextMenu>
+                                                            <Border.Style>
+                                                                <Style TargetType="Border">
+                                                                    <Style.Triggers>
+                                                                        <Trigger Property="Border.IsMouseOver" Value="True">
+                                                                            <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                                                        </Trigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Border.Style>
+                                                        </Border>
+                                                    </HierarchicalDataTemplate>
+                                                </TreeView.ItemTemplate>
+                                            </TreeView>
+                                            <TreeViewItem.ContextMenu>
+                                                <ContextMenu>
+                                                    <MenuItem Header="Добавить барабан" Command="{x:Static local:InteractiveBuilderWindowViewModel.AddBarrelToRoulette}" CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=Self}}">
+                                                        <MenuItem.Style>
+                                                            <Style TargetType="MenuItem">
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding CommBarrels.Count}" Value="7">
+                                                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </MenuItem.Style>
+                                                    </MenuItem>
+                                                    <MenuItem Header="Удалить рулетку" Command="{x:Static local:InteractiveBuilderWindowViewModel.DeleteRouletteFromCommand}" CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=Self}}"></MenuItem>
+                                                </ContextMenu>
+                                            </TreeViewItem.ContextMenu>
+                                        </TreeViewItem>
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding CommBarrels.Count}" Value="0">
+                                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                    </DataTrigger>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                    </Border>
+
+                                </StackPanel>
+                                <TreeViewItem.Style>
+                                    <Style TargetType="TreeViewItem">
+                                        <Style.Triggers>
+                                            <Trigger Property="Border.IsMouseOver" Value="True">
+                                                <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TreeViewItem.Style>
+                            </TreeViewItem>
+
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </TreeViewItem>
+        </TreeView>
+    </Grid>
+</Window>

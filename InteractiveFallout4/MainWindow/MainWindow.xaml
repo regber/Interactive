@@ -1,0 +1,148 @@
+﻿<Window x:Class="InteractiveFallout4.MainWindow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InteractiveFallout4.MainWindow"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:inter="clr-namespace:InteractiveFallout4.InteractiveBuilder"
+        xmlns:Calibration="clr-namespace:InteractiveFallout4.MainWindow.CalibrationProcessor"
+        xmlns:Converters="clr-namespace:InteractiveFallout4.Common.Converters"
+        mc:Ignorable="d"
+        Title="Интерактив Fallout 4" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Window.Resources>
+        <local:MainWindowViewModel x:Key="MainWindowViewModel"></local:MainWindowViewModel>
+        <Converters:BoolInvertingConverter x:Key="BoolInvertingConverter"></Converters:BoolInvertingConverter>
+        <Converters:IsEqualZero x:Key="IsEqualZero"></Converters:IsEqualZero>
+        <local:Connected x:Key="Connected"></local:Connected>
+        <Calibration:CalibrationProcessor x:Key="Calibration"></Calibration:CalibrationProcessor>
+    </Window.Resources>
+    <Window.DataContext>
+        <Binding Source="{StaticResource MainWindowViewModel}"></Binding>
+    </Window.DataContext>
+    <Grid Name="MainGrid">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--Основное меню-->
+        <Border BorderBrush="Black"  BorderThickness="2">
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Height="30" VerticalAlignment="Top" Background="Gray">
+                <Menu Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type StackPanel}},Path=ActualHeight}">
+                    <MenuItem  Header="Меню" FontSize="15" Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type StackPanel}},Path=ActualHeight}" >
+                        <MenuItem Header="Подключить" HorizontalAlignment="Stretch" Command="{Binding  ConnectCommand}" IsEnabled="{Binding Path=Finish, Source={StaticResource Connected},UpdateSourceTrigger=PropertyChanged,Converter={StaticResource IsEqualZero}}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"></MenuItem>
+                        <MenuItem Header="Настройки" HorizontalAlignment="Stretch" Command="{Binding  ShowOptionsCommand}" IsEnabled="{Binding  ApplicationIsConnectedToGame, Converter={StaticResource BoolInvertingConverter}}"></MenuItem>
+                        <MenuItem Header="Конструктор" HorizontalAlignment="Stretch" Command="{Binding ShowInteractiveBuilderCommand}" IsEnabled="{Binding ApplicationIsConnectedToGame, Converter={StaticResource BoolInvertingConverter}}"></MenuItem>
+                        <MenuItem Header="Статистика" Command="{Binding ShowDonateStatisticsCommand}" IsEnabled="{Binding ApplicationIsConnectedToGame, Converter={StaticResource BoolInvertingConverter}}" HorizontalAlignment="Stretch"></MenuItem>
+                        <MenuItem Header="Показать окно" HorizontalAlignment="Stretch" IsEnabled="{Binding Path=Finish, Source={StaticResource Connected},UpdateSourceTrigger=PropertyChanged,Converter={StaticResource IsEqualZero}}">
+                            <MenuItem Header="Рулетка" Command="{Binding ShowInteractiveRouletteCommand}" HorizontalAlignment="Stretch"></MenuItem>
+                            <MenuItem Header="Донат бар" Command="{Binding ShowInteractiveDonateBarCommand}" HorizontalAlignment="Stretch"></MenuItem>
+                            <MenuItem Header="Окно алертов" Command="{Binding ShowAlertWindowCommand}" HorizontalAlignment="Stretch"></MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Помощь" Command="{Binding ShowHelpCommand}" HorizontalAlignment="Stretch"></MenuItem>
+                        <MenuItem Header="Выход"  HorizontalAlignment="Stretch" Command="{Binding ExitCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Window}} }"></MenuItem>
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Row="1" Background="LightGray">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="600"></ColumnDefinition>
+                <ColumnDefinition Width="5"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!--TabControl-->
+            <TabControl Grid.Column="0">
+                <TabItem Header="Сообщения">
+                    
+                    <RichTextBox IsReadOnly="True" VerticalScrollBarVisibility="Auto"  Background="WhiteSmoke">
+                        <FlowDocument >
+                            <Paragraph>
+                                <Run Text="{Binding ChatMessageRichTextBox.Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></Run>
+                            </Paragraph>
+                        </FlowDocument>
+                        <i:Interaction.Triggers>
+                            <i:PropertyChangedTrigger Binding="{Binding ChatMessageRichTextBox.Text,UpdateSourceTrigger=PropertyChanged}">
+                                <i:CallMethodAction MethodName="ScrollToEnd"></i:CallMethodAction>
+                            </i:PropertyChangedTrigger>
+                        </i:Interaction.Triggers>
+                    </RichTextBox>
+                    
+                </TabItem>
+                
+                <TabItem Header="Интерактив">
+                    <RichTextBox IsReadOnly="True" VerticalScrollBarVisibility="Auto"  Background="WhiteSmoke">
+                        <FlowDocument >
+                            <Paragraph>
+                                <Run Text="{Binding  InteractiveCommandMessageRichTextBox.Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></Run>
+                            </Paragraph>
+                        </FlowDocument>
+                        <i:Interaction.Triggers>
+                            <i:PropertyChangedTrigger Binding="{Binding InteractiveCommandMessageRichTextBox.Text,UpdateSourceTrigger=PropertyChanged}">
+                                <i:CallMethodAction MethodName="ScrollToEnd"></i:CallMethodAction>
+                            </i:PropertyChangedTrigger>
+                        </i:Interaction.Triggers>
+                    </RichTextBox>
+                </TabItem>
+                <TabItem Header="Донаты">
+                    <RichTextBox IsReadOnly="True" VerticalScrollBarVisibility="Auto"  Background="WhiteSmoke">
+                        <FlowDocument >
+                            <Paragraph>
+                                <Run Text="{Binding   DonateMessageRichTextBox.Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></Run>
+                            </Paragraph>
+                        </FlowDocument>
+                        <i:Interaction.Triggers>
+                            <i:PropertyChangedTrigger Binding="{Binding DonateMessageRichTextBox.Text,UpdateSourceTrigger=PropertyChanged}">
+                                <i:CallMethodAction MethodName="ScrollToEnd"></i:CallMethodAction>
+                            </i:PropertyChangedTrigger>
+                        </i:Interaction.Triggers>
+                    </RichTextBox>
+                </TabItem>
+                <TabItem Header="Raw-сообщения">
+                    <RichTextBox IsReadOnly="True" VerticalScrollBarVisibility="Auto"  Background="WhiteSmoke">
+                        <FlowDocument >
+                            <Paragraph>
+                                <Run Text="{Binding    RawMessageRichTextBox.Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></Run>
+                            </Paragraph>
+                        </FlowDocument>
+                        <i:Interaction.Triggers>
+                            <i:PropertyChangedTrigger Binding="{Binding RawMessageRichTextBox.Text,UpdateSourceTrigger=PropertyChanged}">
+                                <i:CallMethodAction MethodName="ScrollToEnd"></i:CallMethodAction>
+                            </i:PropertyChangedTrigger>
+                        </i:Interaction.Triggers>
+                    </RichTextBox>
+                </TabItem>
+            </TabControl>
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
+            <!--ListBox-->
+            <ListBox IsEnabled="{Binding Path=enableCommandConsole, Source={StaticResource MainWindowViewModel}}" ItemsSource="{Binding Source={x:Static local:MainWindowViewModel.CurrentActiveSetCommandList}}" Grid.Column="2">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="WhiteSmoke"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <HierarchicalDataTemplate>
+                        <ListBoxItem>
+                            <TextBlock FontSize="14" Text="{Binding Title}"></TextBlock>
+                            <ListBoxItem.InputBindings>
+                                <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding Path=DataContext.AddCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}} }"></MouseBinding>
+                            </ListBoxItem.InputBindings>
+                        </ListBoxItem>
+                    </HierarchicalDataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </Grid>
+    </Grid>
+</Window>

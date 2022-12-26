@@ -81,6 +81,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\Injectors\DllInjector.cs" />
     <Compile Include="MainWindow\AlertsProcessor\AlertsProcessor.cs" />
     <Compile Include="Common\Converters\Converters.cs" />
     <Compile Include="Common\Crypting\BindingPasswordBox.xaml.cs">

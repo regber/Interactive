@@ -12,9 +12,9 @@ DEBUG;TRACE
 C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\App.xaml
 20-791869171
 21680789664
-56477011336
-1242071523726
+57-365348031
+201784027610
 Common\Crypting\BindingPasswordBox.xaml;Common\DialogWindows\RenameCommandDialogWindow.xaml;DonateStatistics\DonateStatisticsWindow.xaml;DonateStatistics\OldWindow\DonatStatistic.xaml;InteractiveBuilder\CommandTypeOptions\CommandTypeOptionsWindow.xaml;InteractiveBuilder\InteractiveBuilderWindow.xaml;InteractiveBuilder\VariableOptions\VariableOptionsWindow.xaml;InteractiveDonateBar\InteractiveDonateBarWindow.xaml;InteractiveRoulette\InteractiveRouletteWindow.xaml;MainWindow\MainWindow.xaml;OldAlertWindow\AlertWindow.xaml;Options\Alerts\AlertsUC.xaml;Options\DonateBar\DonateBarUC.xaml;Options\DonateProperty\DonatePropertyUC.xaml;Options\GoodGame\GoodGameUC.xaml;Options\OptionsWindow.xaml;Options\Peka2tv\Peka2tvUC.xaml;Options\Rutony\RutonyUC.xaml;Options\SlotMachine\SlotMachineUC.xaml;Options\Twitch\TwitchUC.xaml;
 
-False
+True
 

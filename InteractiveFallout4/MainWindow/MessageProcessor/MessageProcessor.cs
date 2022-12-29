@@ -40,11 +40,11 @@ namespace InteractiveFallout4.MainWindow.MessageProcessor
 
         public static void Start()
         {
-            //IsCalibrationAborted = !CalibrationProcessor.CalibrationProcessor.CheckGameVariableValue();
+            IsCalibrationAborted = !CalibrationProcessor.CalibrationProcessor.CheckGameVariableValue();
 
             //Если калибровка оборвана, то отменяем старт MessageProcessor
-            //if (IsCalibrationAborted)
-                //return;
+            if (IsCalibrationAborted)
+                return;
 
             // т.к. списки пусты то указываем что обработка алертов и команд завершена
             AlertRuningNow = false;

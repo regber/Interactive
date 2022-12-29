@@ -17,6 +17,7 @@ using System.Diagnostics;
 
 using messageProcessor = InteractiveFallout4.MainWindow.MessageProcessor.MessageProcessor;
 using InteractiveFallout4.Common.Injectors;
+using InteractiveFallout4.Common.Conductors;
 
 namespace InteractiveFallout4.MainWindow
 {
@@ -99,6 +100,21 @@ namespace InteractiveFallout4.MainWindow
             }
         }
 
+        //Переменная указывающая в каком положении находится калибровка
+        private bool _ApplicationCalibrationInProcess = false;
+        public bool ApplicationCalibrationInProcess
+        {
+            get
+            {
+                return _ApplicationCalibrationInProcess;
+            }
+            set
+            {
+                _ApplicationCalibrationInProcess = value;
+                OnPropertyChanged(nameof(ApplicationCalibrationInProcess));
+            }
+        }
+
         //Свойство для переключения консоли в рабочее или не рабочее состояние
         private static bool _enableCommandConsole = false;
         public static bool enableCommandConsole
@@ -169,7 +185,7 @@ namespace InteractiveFallout4.MainWindow
                         ConnectMenuItem.Header = "Отключить";
 
                         //Включаем консоль с командами
-                        enableCommandConsole = true;
+                        //enableCommandConsole = true;
 
                         //Запускаем обработчик сообщений
                         ConnectMessageProcessor();
@@ -193,6 +209,8 @@ namespace InteractiveFallout4.MainWindow
 
                         //Отключаем консоль с командами
                         enableCommandConsole = false;
+
+                        ApplicationCalibrationInProcess = false;
 
                         //Останавливаем обработчик событий
                         DisconnectMessageProcessor();
@@ -455,13 +473,14 @@ namespace InteractiveFallout4.MainWindow
             MessageProcessorThread = new Thread(() =>
             {
                 Connected.Start();
-                messageProcessor.Start();
                 DllInjector.Inject();//сделать проверку на инжектирование библотека, что бы избежать повторной инжекции
+                messageProcessor.Start();
                 Connected.Done();
-                /*
+                
                 //Если калибровка прервана то дисконектим все подключения к площадкам
                 if (messageProcessor.IsCalibrationAborted)
                 {
+
                     DisconnectDonationAlerts();
                     DisconnectDonatePay();
                     DisconnectRutony();
@@ -479,10 +498,12 @@ namespace InteractiveFallout4.MainWindow
                         //Отключаем консоль с командами
                         enableCommandConsole = false;
 
+                        ApplicationCalibrationInProcess = false;
+
                         //System.Windows.MessageBox.Show("калибровка прервана");
 
                     });
-                }*/
+                }
 
                 System.Windows.Threading.Dispatcher.Run();//запускаем диспетчер для дальнейшего взаимодействия с потоком
             });
@@ -719,6 +740,19 @@ namespace InteractiveFallout4.MainWindow
                 });
             }
         }
+
+        public ViewModel.Command StartInGameCalibration
+        {
+            get
+            {
+                return new ViewModel.Command((obj) =>
+                {
+                    Fallou4Conductor.SendSimpleConsoleCommand("setstage 07006481 10");
+                    Fallou4Conductor.SendSimpleConsoleCommand("setstage 07075AF1 10");
+                });
+            }
+        }
+
         public ViewModel.Command ShowHelpCommand
         {
             get

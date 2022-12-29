@@ -235,6 +235,8 @@ namespace InteractiveFallout4.MainWindow.CalibrationProcessor
                 System.Windows.Application.Current.Dispatcher.Invoke(() =>
                 {
                     ((MainWindowViewModel)(System.Windows.Application.Current.MainWindow.DataContext)).SendMessageToChatRichTextBox("Поиск завершен, для завершения калибровки запустите калибровку в игре!(Esc прервать калибровку)" + Environment.NewLine);
+
+                    ((MainWindowViewModel)(System.Windows.Application.Current.MainWindow.DataContext)).ApplicationCalibrationInProcess = true;
                 });
                 #endregion MemoryRead
 
@@ -262,6 +264,8 @@ namespace InteractiveFallout4.MainWindow.CalibrationProcessor
                     System.Windows.Application.Current.Dispatcher.Invoke(() =>
                     {
                         ((MainWindowViewModel)(System.Windows.Application.Current.MainWindow.DataContext)).SendMessageToChatRichTextBox("Калибровка завершена, интерактив к игре подключен!" + Environment.NewLine);
+
+                        ((MainWindowViewModel)(System.Windows.Application.Current.MainWindow.DataContext)).ApplicationCalibrationInProcess = false;
                     });
                 }
 

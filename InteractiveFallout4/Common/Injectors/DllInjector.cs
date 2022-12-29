@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InteractiveFallout4.MainWindow;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -119,7 +120,16 @@ namespace InteractiveFallout4.Common.Injectors
                     return;
                 }
                 else
+                {
                     DllInjector.InjectDLL(hProcess, strDLLName);
+
+                    System.Windows.Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        ((MainWindowViewModel)(System.Windows.Application.Current.MainWindow.DataContext)).SendMessageToChatRichTextBox("Библиотека инжектирована..." + Environment.NewLine);
+                    });
+                    
+                }
+                    
             }
         }
     }

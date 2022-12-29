@@ -157,11 +157,11 @@ namespace InteractiveFallout4.MainWindow.CommandProcessor
 
 
                     //Заполняем данные по адресу и значению из типа команды
-                    //ulong memmoryReadOnCommandTypeAdress = CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[currentCommand.CommType.Variable];
+                    ulong memmoryReadOnCommandTypeAdress = CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[currentCommand.CommType.Variable];
                     float memmoryReadOnCommandTypeValue = currentCommand.CommType.Value;
 
                     //Проверяем равно ли значение из типа команды со сначением найденным по адресу указанному в типе команды
-                    commandConditionsCompleteOnCommandType = ConsoleProcessor.ConsoleProcessor.ChechValueConcur(currentCommand.CommType.Variable, memmoryReadOnCommandTypeValue);//СhechMemoryValueConcur(memmoryReadOnCommandTypeAdress, memmoryReadOnCommandTypeValue, gameProcessHandle);
+                    commandConditionsCompleteOnCommandType = СhechMemoryValueConcur(memmoryReadOnCommandTypeAdress, memmoryReadOnCommandTypeValue, gameProcessHandle);/*ConsoleProcessor.ConsoleProcessor.ChechValueConcur(currentCommand.CommType.Variable, memmoryReadOnCommandTypeValue);*/
 
                     commandConditionsCompleteOnCommandTypeMemoriesRead = true;
 
@@ -169,7 +169,7 @@ namespace InteractiveFallout4.MainWindow.CommandProcessor
                     {
                         foreach (var memmoryRead in currentCommand.CommMemoryReads)
                         {
-                            if (ConsoleProcessor.ConsoleProcessor.ChechValueConcur(memmoryRead.Variable, memmoryRead.Value) !=true/*СhechMemoryValueConcur(CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memmoryRead.Variable], memmoryRead.Value, gameProcessHandle) != true*/)
+                            if (СhechMemoryValueConcur(CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memmoryRead.Variable], memmoryRead.Value, gameProcessHandle) != true/*ConsoleProcessor.ConsoleProcessor.ChechValueConcur(memmoryRead.Variable, memmoryRead.Value) !=true*/)
                             {
                                 commandConditionsCompleteOnCommandTypeMemoriesRead = false;
                                 break;
@@ -246,7 +246,7 @@ namespace InteractiveFallout4.MainWindow.CommandProcessor
         {
 
             //Переменные
-            /*
+            
             try
             {
                 gameProcessHandle = OpenProcess(PROCESS_ALL_ACCESS, false, gameProcess.Id);
@@ -263,75 +263,75 @@ namespace InteractiveFallout4.MainWindow.CommandProcessor
             ulong finalPointAddress = 0;
             byte[] bufferAddress = new byte[8]; //Каждый символ в строковой переменной занимает 2 байта!, числовое значение int64 занимает 8 байт?(//'Hello World!' takes 12*2 bytes because of Unicode)
             byte[] valueFromAdressMemmoryCell = new byte[8];//Значение переменной найденной по указанному адресу
-            */
+            
             //Если в текущей команде есть запись в память то записываем значения из него
             if (currentCommand.CommMemoryWrites.Count() != 0)
             {
                 foreach (var memoryWrite in currentCommand.CommMemoryWrites)
                 {
                     //Если в массив с адресами памяти не является пустым(проверяем нулевой элемент т.к. команда Split создает массив с одним значением независимо от того было ли что то в строке или нет)
-                    //if (CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memoryWrite.Variable]!=0)
-                    //{
+                    if (CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memoryWrite.Variable]!=0)
+                    {
                         //Запись финального адреса искомой переменной в которой будет меняться значение
-                        //finalPointAddress = CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memoryWrite.Variable];
+                        finalPointAddress = CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memoryWrite.Variable];
 
                         //Конвертируем значение с плавующей точкой в массив байтов
-                        //injectionValue = BitConverter.GetBytes(Convert.ToSingle(memoryWrite.Value));
+                        injectionValue = BitConverter.GetBytes(Convert.ToSingle(memoryWrite.Value));
                         
 
                         //Запись в память поверх старого значения(Write)
                         if (memoryWrite.Type == "Write")
                         {
                             //Записываем значение в указанную ячейку памяти
-                            //WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
-                            ConsoleProcessor.ConsoleProcessor.WriteValue(memoryWrite.Variable, memoryWrite.Value);
+                            WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
+                            //ConsoleProcessor.ConsoleProcessor.WriteValue(memoryWrite.Variable, memoryWrite.Value);
                         }
 
                         //Запись в память суммы того значения что было в ячейки памяти и того что передаем в ячейку памяти(GetAddAndWrite)
                         if (memoryWrite.Type == "GetAddAndWrite")
                         {
-                            //valueFromAdressMemmoryCell = new byte[8];
+                            valueFromAdressMemmoryCell = new byte[8];
                             //Чистаем значение из памяти
-                            //ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
+                            ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
 
                             //Складываем значение прочитанное из памяти с передаваемым значением
-                            //injectionValue = BitConverter.GetBytes(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) + BitConverter.ToSingle(injectionValue, 0));
+                            injectionValue = BitConverter.GetBytes(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) + BitConverter.ToSingle(injectionValue, 0));
 
                             //Записываем полученное значение в указанную ячейку памяти
-                            //WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
-                            ConsoleProcessor.ConsoleProcessor.WriteAddValue(memoryWrite.Variable, memoryWrite.Value);
+                            WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
+                            //ConsoleProcessor.ConsoleProcessor.WriteAddValue(memoryWrite.Variable, memoryWrite.Value);
                         }
 
                         //Запись в память произведения того значения что было в ячейки памяти и того что передаем в ячейку памяти(GetMultipleAndWrite)
                         if (memoryWrite.Type == "GetMultipleAndWrite")
                         {
-                            //valueFromAdressMemmoryCell = new byte[8];
+                            valueFromAdressMemmoryCell = new byte[8];
                             //Чистаем значение из памяти
-                            //ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
+                            ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
 
                             //Перемножаем значение прочитанное из памяти с передаваемым значением
-                            //injectionValue = BitConverter.GetBytes(Convert.ToSingle(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) * BitConverter.ToSingle(injectionValue, 0)));
+                            injectionValue = BitConverter.GetBytes(Convert.ToSingle(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) * BitConverter.ToSingle(injectionValue, 0)));
 
                             //Записываем значение в указанную ячейку памяти
-                            //WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
-                            ConsoleProcessor.ConsoleProcessor.WriteMultipleValue(memoryWrite.Variable, memoryWrite.Value);
+                            WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
+                            //ConsoleProcessor.ConsoleProcessor.WriteMultipleValue(memoryWrite.Variable, memoryWrite.Value);
                         }
 
                         //Запись в память деления того значения что было в ячейки памяти и того что передаем в ячейку памяти(GetDevideAndWrite)
                         if (memoryWrite.Type == "GetDevideAndWrite")
                         {
-                            //valueFromAdressMemmoryCell = new byte[8];
+                            valueFromAdressMemmoryCell = new byte[8];
                             //Чистаем значение из памяти
-                            //ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
+                            ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
 
                             //Делим значение прочитанное из памяти на передаваемое значение
-                            //injectionValue = BitConverter.GetBytes(Convert.ToSingle(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) / BitConverter.ToSingle(injectionValue, 0)));
+                            injectionValue = BitConverter.GetBytes(Convert.ToSingle(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) / BitConverter.ToSingle(injectionValue, 0)));
 
                             //Записываем значение в указанную ячейку памяти
-                            //WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
-                            ConsoleProcessor.ConsoleProcessor.WriteDevideValue(memoryWrite.Variable, memoryWrite.Value);
+                            WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
+                            //ConsoleProcessor.ConsoleProcessor.WriteDevideValue(memoryWrite.Variable, memoryWrite.Value);
                         }
-                    //}
+                    }
                 }
             }
 
@@ -353,7 +353,7 @@ namespace InteractiveFallout4.MainWindow.CommandProcessor
         private static void StartCommandProcessing(List<int> rouletteResult)
         {
             //Переменные
-            /*
+            
             try
             {
                 gameProcessHandle = OpenProcess(PROCESS_ALL_ACCESS, false, gameProcess.Id);
@@ -370,7 +370,7 @@ namespace InteractiveFallout4.MainWindow.CommandProcessor
             ulong finalPointAddress = 0;
             byte[] bufferAddress = new byte[8]; //Каждый символ в строковой переменной занимает 2 байта!, числовое значение int64 занимает 8 байт?(//'Hello World!' takes 12*2 bytes because of Unicode)
             byte[] valueFromAdressMemmoryCell = new byte[8];//Значение переменной найденной по указанному адресу
-            */
+            
             //Если в команде есть барабан
             if (currentCommand.CommBarrels.Count()!=0)
             {
@@ -385,66 +385,66 @@ namespace InteractiveFallout4.MainWindow.CommandProcessor
                             {
 
                             //Если в массив с адресами памяти не является пустым(проверяем нулевой элемент т.к. команда Split создает массив с одним значением независимо от того было ли что то в строке или нет)
-                            //if (CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memoryWrite.Variable]!=0/* InternalCheckedVariableAddreses[memoryWrite.Attribute("Variable").Value] != 0*/)
-                            //{
+                            if (CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memoryWrite.Variable]!=0/* InternalCheckedVariableAddreses[memoryWrite.Attribute("Variable").Value] != 0*/)
+                            {
                             //Запись финального адреса искомой переменной в которой будет меняться значение, а она как уже было ранее равна предпоследнему адресу найденного как ссылка плюс последнее смещение в массиве addressOffset
-                            //finalPointAddress = CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memoryWrite.Variable];
+                            finalPointAddress = CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memoryWrite.Variable];
 
-                            //injectionValue = BitConverter.GetBytes(Convert.ToSingle(memoryWrite.Value));
+                            injectionValue = BitConverter.GetBytes(Convert.ToSingle(memoryWrite.Value));
 
                             //Запись в память поверх старого значения(Write)
                             if (memoryWrite.Type == "Write")
                             {
                                 //Записываем значение в указанную ячейку памяти
-                                //WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
-                                ConsoleProcessor.ConsoleProcessor.WriteValue(memoryWrite.Variable, memoryWrite.Value);
+                                WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
+                                //ConsoleProcessor.ConsoleProcessor.WriteValue(memoryWrite.Variable, memoryWrite.Value);
                             }
 
                             //Запись в память суммы того значения что было в ячейки памяти и того что передаем в ячейку памяти(GetAddAndWrite)
                             if (memoryWrite.Type == "GetAddAndWrite")
                             {
-                                //valueFromAdressMemmoryCell = new byte[8];
+                                valueFromAdressMemmoryCell = new byte[8];
                                 //Чистаем значение из памяти
-                                //ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
+                                ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
 
                                 //Складываем значение прочитанное из памяти с передаваемым значением
-                                //injectionValue = BitConverter.GetBytes(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) + BitConverter.ToSingle(injectionValue, 0));
+                                injectionValue = BitConverter.GetBytes(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) + BitConverter.ToSingle(injectionValue, 0));
 
                                 //Записываем полученное значение в указанную ячейку памяти
-                                //WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
-                                ConsoleProcessor.ConsoleProcessor.WriteAddValue(memoryWrite.Variable, memoryWrite.Value);
+                                WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
+                                //ConsoleProcessor.ConsoleProcessor.WriteAddValue(memoryWrite.Variable, memoryWrite.Value);
                             }
 
                             //Запись в память произведения того значения что было в ячейки памяти и того что передаем в ячейку памяти(GetMultipleAndWrite)
                             if (memoryWrite.Type == "GetMultipleAndWrite")
                             {
-                                //valueFromAdressMemmoryCell = new byte[8];
+                                valueFromAdressMemmoryCell = new byte[8];
                                 //Чистаем значение из памяти
-                                //ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
+                                ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
 
                                 //Перемножаем значение прочитанное из памяти с передаваемым значением
-                                //injectionValue = BitConverter.GetBytes(Convert.ToSingle(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) * BitConverter.ToSingle(injectionValue, 0)));
+                                injectionValue = BitConverter.GetBytes(Convert.ToSingle(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) * BitConverter.ToSingle(injectionValue, 0)));
 
                                 //Записываем значение в указанную ячейку памяти
-                                //WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
-                                ConsoleProcessor.ConsoleProcessor.WriteMultipleValue(memoryWrite.Variable, memoryWrite.Value);
+                                WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
+                                //ConsoleProcessor.ConsoleProcessor.WriteMultipleValue(memoryWrite.Variable, memoryWrite.Value);
                             }
 
                             //Запись в память деления того значения что было в ячейки памяти и того что передаем в ячейку памяти(GetDevideAndWrite)
                             if (memoryWrite.Type == "GetDevideAndWrite")
                             {
-                                //valueFromAdressMemmoryCell = new byte[8];
+                                valueFromAdressMemmoryCell = new byte[8];
                                 //Чистаем значение из памяти
-                                //ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
+                                ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
 
                                 //Делим значение прочитанное из памяти на передаваемое значение
-                                //injectionValue = BitConverter.GetBytes(Convert.ToSingle(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) / BitConverter.ToSingle(injectionValue, 0)));
+                                injectionValue = BitConverter.GetBytes(Convert.ToSingle(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) / BitConverter.ToSingle(injectionValue, 0)));
 
                                 //Записываем значение в указанную ячейку памяти
-                                //WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
-                                ConsoleProcessor.ConsoleProcessor.WriteDevideValue(memoryWrite.Variable, memoryWrite.Value);
+                                WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
+                                //ConsoleProcessor.ConsoleProcessor.WriteDevideValue(memoryWrite.Variable, memoryWrite.Value);
                             }
-                            //}
+                            }
                         }
                         }
                 }
@@ -456,68 +456,68 @@ namespace InteractiveFallout4.MainWindow.CommandProcessor
                 foreach (var memoryWrite in currentCommand.CommMemoryWrites)
                 {
                     //Если в массив с адресами памяти не является пустым(проверяем нулевой элемент т.к. команда Split создает массив с одним значением независимо от того было ли что то в строке или нет)
-                    //if (CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memoryWrite.Variable] != 0)
-                    //{
+                    if (CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memoryWrite.Variable] != 0)
+                    {
                     //Запись финального адреса искомой переменной в которой будет меняться значение
-                    //finalPointAddress = CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memoryWrite.Variable];
+                    finalPointAddress = CalibrationProcessor.CalibrationProcessor.checkedVariableAddreses[memoryWrite.Variable];
 
                     //Конвертируем значение с плавующей точкой в массив байтов
-                    //injectionValue = BitConverter.GetBytes(Convert.ToSingle(memoryWrite.Value));
+                    injectionValue = BitConverter.GetBytes(Convert.ToSingle(memoryWrite.Value));
 
 
                     //Запись в память поверх старого значения(Write)
                     if (memoryWrite.Type == "Write")
                     {
                         //Записываем значение в указанную ячейку памяти
-                        //WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
-                        ConsoleProcessor.ConsoleProcessor.WriteValue(memoryWrite.Variable, memoryWrite.Value);
+                        WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
+                        //ConsoleProcessor.ConsoleProcessor.WriteValue(memoryWrite.Variable, memoryWrite.Value);
                     }
 
                     //Запись в память суммы того значения что было в ячейки памяти и того что передаем в ячейку памяти(GetAddAndWrite)
                     if (memoryWrite.Type == "GetAddAndWrite")
                     {
-                        //valueFromAdressMemmoryCell = new byte[8];
+                        valueFromAdressMemmoryCell = new byte[8];
                         //Чистаем значение из памяти
-                        //ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
+                        ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
 
                         //Складываем значение прочитанное из памяти с передаваемым значением
-                        //injectionValue = BitConverter.GetBytes(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) + BitConverter.ToSingle(injectionValue, 0));
+                        injectionValue = BitConverter.GetBytes(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) + BitConverter.ToSingle(injectionValue, 0));
 
                         //Записываем полученное значение в указанную ячейку памяти
-                        //WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
-                        ConsoleProcessor.ConsoleProcessor.WriteAddValue(memoryWrite.Variable, memoryWrite.Value);
+                        WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
+                        //ConsoleProcessor.ConsoleProcessor.WriteAddValue(memoryWrite.Variable, memoryWrite.Value);
                     }
 
                     //Запись в память произведения того значения что было в ячейки памяти и того что передаем в ячейку памяти(GetMultipleAndWrite)
                     if (memoryWrite.Type == "GetMultipleAndWrite")
                     {
-                        //valueFromAdressMemmoryCell = new byte[8];
+                        valueFromAdressMemmoryCell = new byte[8];
                         //Чистаем значение из памяти
-                        //ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
+                        ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
 
                         //Перемножаем значение прочитанное из памяти с передаваемым значением
-                        //injectionValue = BitConverter.GetBytes(Convert.ToSingle(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) * BitConverter.ToSingle(injectionValue, 0)));
+                        injectionValue = BitConverter.GetBytes(Convert.ToSingle(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) * BitConverter.ToSingle(injectionValue, 0)));
 
                         //Записываем значение в указанную ячейку памяти
-                        //WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
-                        ConsoleProcessor.ConsoleProcessor.WriteMultipleValue(memoryWrite.Variable, memoryWrite.Value);
+                        WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
+                        //ConsoleProcessor.ConsoleProcessor.WriteMultipleValue(memoryWrite.Variable, memoryWrite.Value);
                     }
 
                     //Запись в память деления того значения что было в ячейки памяти и того что передаем в ячейку памяти(GetDevideAndWrite)
                     if (memoryWrite.Type == "GetDevideAndWrite")
                     {
-                        //valueFromAdressMemmoryCell = new byte[8];
+                        valueFromAdressMemmoryCell = new byte[8];
                         //Чистаем значение из памяти
-                        //ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
+                        ReadProcessMemory((int)gameProcessHandle, finalPointAddress, valueFromAdressMemmoryCell, valueFromAdressMemmoryCell.Length, ref bytesRead);
 
                         //Делим значение прочитанное из памяти на передаваемое значение
-                        //injectionValue = BitConverter.GetBytes(Convert.ToSingle(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) / BitConverter.ToSingle(injectionValue, 0)));
+                        injectionValue = BitConverter.GetBytes(Convert.ToSingle(BitConverter.ToSingle(valueFromAdressMemmoryCell, 0) / BitConverter.ToSingle(injectionValue, 0)));
 
                         //Записываем значение в указанную ячейку памяти
-                        //WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
-                        ConsoleProcessor.ConsoleProcessor.WriteDevideValue(memoryWrite.Variable, memoryWrite.Value);
+                        WriteProcessMemory((int)gameProcessHandle, finalPointAddress, injectionValue, injectionValue.Length, ref bytesWritten);
+                        //ConsoleProcessor.ConsoleProcessor.WriteDevideValue(memoryWrite.Variable, memoryWrite.Value);
                     }
-                    //}
+                    }
                 }
             }
 

@@ -489,4 +489,4 @@ C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveF
 C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\obj\Debug\ChatSource.csproj.CopyComplete
 C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\obj\Debug\ChatSource.dll
 C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\obj\Debug\ChatSource.pdb
-C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\obj\Debug\ChatSource.csprojAssemblyReference.cache
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\ChatSource\obj\Debug\ChatSource.csproj.AssemblyReference.cache

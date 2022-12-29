@@ -16,7 +16,7 @@ using System.Text.RegularExpressions;
 using System.Diagnostics;
 
 using messageProcessor = InteractiveFallout4.MainWindow.MessageProcessor.MessageProcessor;
-
+using InteractiveFallout4.Common.Injectors;
 
 namespace InteractiveFallout4.MainWindow
 {
@@ -167,6 +167,9 @@ namespace InteractiveFallout4.MainWindow
 
                         ApplicationIsConnectedToGame = true;
                         ConnectMenuItem.Header = "Отключить";
+
+                        //Включаем консоль с командами
+                        enableCommandConsole = true;
 
                         //Запускаем обработчик сообщений
                         ConnectMessageProcessor();
@@ -453,8 +456,9 @@ namespace InteractiveFallout4.MainWindow
             {
                 Connected.Start();
                 messageProcessor.Start();
+                DllInjector.Inject();//сделать проверку на инжектирование библотека, что бы избежать повторной инжекции
                 Connected.Done();
-
+                /*
                 //Если калибровка прервана то дисконектим все подключения к площадкам
                 if (messageProcessor.IsCalibrationAborted)
                 {
@@ -478,7 +482,7 @@ namespace InteractiveFallout4.MainWindow
                         //System.Windows.MessageBox.Show("калибровка прервана");
 
                     });
-                }
+                }*/
 
                 System.Windows.Threading.Dispatcher.Run();//запускаем диспетчер для дальнейшего взаимодействия с потоком
             });

@@ -104,28 +104,23 @@ namespace InteractiveFallout4.Common.Injectors
             return;
         }
 
-        /*
-        private void button1_Click(object sender, EventArgs e)
+        public static void Inject()
         {
-            
-            String strDLLName = "C:\\Users\\JotaC\\Desktop\\C#\\Projects\\L2Soul\\L2Soul\\bin\\Release\\L2Soul.dll";
-            String strProcessName = "notepad";
+            String strDLLName = @"C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\bin\Debug\InteractiveFallout4Dll.dll";
+            String strProcessName = "Fallout4";
 
-            Int32 ProcID = GetProcessId(strProcessName);
+            Int32 ProcID = DllInjector.GetProcessId(strProcessName);
 
             if (ProcID >= 0)
             {
-                IntPtr hProcess = (IntPtr)OpenProcess(0x1F0FFF, 1, ProcID);
+                IntPtr hProcess = (IntPtr)DllInjector.OpenProcess(0x1F0FFF, 1, ProcID);
                 if (hProcess == null)
                 {
-                    MessageBox.Show("OpenProcess() Failed!");
                     return;
                 }
                 else
-                    InjectDLL(hProcess, strDLLName);
+                    DllInjector.InjectDLL(hProcess, strDLLName);
             }
-            
-        }*/
-
+        }
     }
 }

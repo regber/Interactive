@@ -16,7 +16,7 @@ namespace InteractiveFallout4.Common.Conductors
         public static MemoryMappedFile RequestGlobalValue;
         public static MemoryMappedFile ResponseGlobalValue;
 
-        public Fallou4Conductor()
+        static Fallou4Conductor()
         {
             // Создаст, или подключится к уже созданной памяти с таким именем
             SimpleConsoleCommand = MemoryMappedFile.CreateOrOpen("Fallout4SimpleConsoleCommand", 512, MemoryMappedFileAccess.ReadWrite);
@@ -25,14 +25,14 @@ namespace InteractiveFallout4.Common.Conductors
             ResponseGlobalValue = MemoryMappedFile.CreateOrOpen("Fallout4ResponseGlobalValue", 512, MemoryMappedFileAccess.ReadWrite);
         }
 
-        public void SendSimpleConsoleCommand(string consoleCommand)
+        public static void SendSimpleConsoleCommand(string consoleCommand)
         {
             SimpleConsoleCommand.CreateViewStream().Write(Encoding.Default.GetBytes(consoleCommand + '\0'), 0, consoleCommand.Length + 1);
         }
 
-        public string GetGlobalValue(string variableName)
+        public static string GetGlobalValue(string variableName)
         {
-            RequestGlobalValue.CreateViewStream().Write(Encoding.Default.GetBytes(variableName + '\0'), 0, variableName.Length + 1);
+            RequestGlobalValue.CreateViewStream().Write(Encoding.Default.GetBytes("getglobalvalue "+variableName + '\0'), 0, ("getglobalvalue " + variableName).Length + 1);
 
             string responseGlobalValue = "" + '\0';
 
@@ -63,7 +63,7 @@ namespace InteractiveFallout4.Common.Conductors
             }
         }
 
-        private string GetFloatNumber(string message)
+        private static string GetFloatNumber(string message)
         {
             return Regex.Match(message, @"\d[\d|.]*[\d|.]").Value;
         }

@@ -81,6 +81,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\Conductors\Fallou4Conductor.cs" />
     <Compile Include="Common\Injectors\DllInjector.cs" />
     <Compile Include="MainWindow\AlertsProcessor\AlertsProcessor.cs" />
     <Compile Include="Common\Converters\Converters.cs" />
@@ -123,6 +124,7 @@
       <DependentUpon>InteractiveRouletteWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="InteractiveRoulette\InteractiveRouletteWindowViewModel.cs" />
+    <Compile Include="MainWindow\ConsoleProcessor\ConsoleProcessor.cs" />
     <Compile Include="MainWindow\MessageProcessor\MessageProcessor.cs" />
     <Compile Include="MainWindow\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

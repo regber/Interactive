@@ -19,7 +19,6 @@ C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveF
 C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\bin\Debug\WpfAnimatedGif.pdb
 C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\bin\Debug\WpfAnimatedGif.xml
-C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\obj\Debug\InteractiveFallout4.csprojAssemblyReference.cache
 C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\obj\Debug\InteractiveFallout4.csproj.ResolveComReference.cache
 C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\obj\Debug\Common\Crypting\BindingPasswordBox.g.cs
 C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\obj\Debug\Common\DialogWindows\RenameCommandDialogWindow.g.cs
@@ -74,3 +73,4 @@ C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveF
 C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\obj\Debug\InteractiveFallout4.csproj.CopyComplete
 C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\obj\Debug\InteractiveFallout4.exe
 C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\obj\Debug\InteractiveFallout4.pdb
+C:\Users\Zevas\source\repos\InteractiveFallout4\InteractiveFallout4\InteractiveFallout4\obj\Debug\InteractiveFallout4.csproj.AssemblyReference.cache
